@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Send Inquiry | PSS 2026 Matchmaking Platform</title>
+  <meta name="description" content="Send a direct inquiry to an exhibitor at Philippine Sport Show 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple-dark: #1a0533; --purple-mid: #4b0082; --purple-light: #7c3aed;
+      --purple-grad: linear-gradient(135deg, #1a0533 0%, #4b0082 50%, #7c3aed 100%);
+      --neon: #39ff14; --white: #ffffff; --gray: #f0f0f8; --gray2: #f8f9fc;
+      --text-dark: #1a0533; --text-light: #ffffffcc; --border: #e0d4f7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--text-dark); overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,5,51,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(57,255,20,0.15); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 42px; border-radius: 50%; }
+    .nav-logo-text { font-size: 1.05rem; font-weight: 900; color: var(--white); }
+    .nav-logo-text span { color: var(--neon); }
+    .nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.83rem; font-weight: 600; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--neon); }
+    .nav-cta { background: var(--neon) !important; color: var(--purple-dark) !important; padding: 8px 20px; border-radius: 50px; font-weight: 800 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    .page-hero { background: var(--purple-grad); padding: 110px 5% 60px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(57,255,20,0.1) 0%, transparent 70%); border-radius: 50%; top: -80px; right: -80px; }
+    .page-hero-inner { position: relative; z-index: 2; max-width: 700px; }
+    .hero-badge { display: inline-block; background: rgba(57,255,20,0.15); border: 1px solid var(--neon); color: var(--neon); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; padding: 5px 18px; border-radius: 50px; margin-bottom: 18px; text-transform: uppercase; }
+    .page-hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 900; color: var(--white); line-height: 1.15; margin-bottom: 14px; }
+    .page-hero p { font-size: 1rem; color: var(--text-light); line-height: 1.7; }
+
+    /* SUPPLIER BANNER */
+    .supplier-banner { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 20px 24px; margin-top: 24px; display: flex; align-items: center; gap: 16px; position: relative; z-index: 2; }
+    .supplier-banner .sb-icon { font-size: 2rem; flex-shrink: 0; }
+    .supplier-banner h3 { font-size: 1.05rem; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+    .supplier-banner p { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+    .form-section { padding: 60px 5%; background: var(--gray2); }
+    .form-wrap { max-width: 700px; margin: 0 auto; }
+    .form-card { background: var(--white); border-radius: 24px; padding: 48px 44px; box-shadow: 0 8px 40px rgba(75,0,130,0.1); }
+
+    .form-section-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--purple-light); margin: 32px 0 18px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+    .form-section-title:first-of-type { margin-top: 0; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--purple-mid); }
+    .form-field label .req { color: #e53e3e; }
+    .form-field input, .form-field select, .form-field textarea { width: 100%; padding: 11px 15px; border: 2px solid var(--border); border-radius: 10px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: var(--text-dark); background: var(--gray); transition: border-color 0.2s, box-shadow 0.2s; outline: none; -webkit-appearance: none; appearance: none; box-sizing: border-box; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--purple-light); box-shadow: 0 0 0 3px rgba(124,58,237,0.12); background: var(--white); }
+    .form-field input[readonly] { background: #f0edf8; color: #666; cursor: default; }
+    .form-field textarea { resize: vertical; min-height: 120px; }
+
+    .submit-btn { width: 100%; background: var(--neon); color: var(--purple-dark); border: none; padding: 16px 40px; font-size: 1rem; font-weight: 800; border-radius: 50px; cursor: pointer; letter-spacing: 0.5px; transition: transform 0.2s, box-shadow 0.2s; font-family: 'Montserrat', sans-serif; margin-top: 36px; }
+    .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(57,255,20,0.55); }
+    .form-note { text-align: center; font-size: 0.78rem; color: #aaa; margin-top: 12px; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(26,5,51,0.98); padding: 20px 5%; border-bottom: 1px solid rgba(57,255,20,0.15); gap: 14px; }
+    }
+    @media (max-width: 600px) {
+      .form-card { padding: 32px 20px; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="../index.html">
+    <img src="../logo.jpg" alt="PSS 2026" onerror="this.style.display='none'">
+    <span class="nav-logo-text">PSS <span>2026</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Matchmaking</a></li>
+    <li><a href="suppliers.html">Suppliers</a></li>
+    <li><a href="buyer-request.html">Buyers</a></li>
+    <li><a href="../registration.html" class="nav-cta">REGISTER</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-badge">&#128140; Send Inquiry</div>
+    <h1>Contact This Supplier</h1>
+    <p>Send a direct inquiry to the exhibitor. Our team will forward your message and help arrange a meeting at PSS 2026.</p>
+    <div class="supplier-banner" id="supplierBanner">
+      <span class="sb-icon">&#127970;</span>
+      <div>
+        <h3 id="bannerName">Loading supplier info...</h3>
+        <p id="bannerBooth">Booth: —</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="form-section">
+  <div class="form-wrap">
+    <div class="form-card">
+
+      <form name="pss-supplier-inquiry" method="POST" action="/matchmaking/thank-you" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="pss-supplier-inquiry" />
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <!-- SUPPLIER INFO (auto-filled) -->
+        <div class="form-section-title">Supplier Information</div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="supplier_company">Supplier Company Name</label>
+            <input type="text" id="supplier_company" name="supplier_company" readonly />
+          </div>
+          <div class="form-field">
+            <label for="booth_number">Booth Number</label>
+            <input type="text" id="booth_number" name="booth_number" readonly />
+          </div>
+        </div>
+
+        <!-- BUYER INFO -->
+        <div class="form-section-title">Your Information</div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="buyer_company">Your Company Name <span class="req">*</span></label>
+            <input type="text" id="buyer_company" name="buyer_company" placeholder="Your company name" required />
+          </div>
+          <div class="form-field">
+            <label for="contact_person">Contact Person <span class="req">*</span></label>
+            <input type="text" id="contact_person" name="contact_person" placeholder="Your full name" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-field">
+            <label for="whatsapp">WhatsApp / Phone <span class="req">*</span></label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+63 912 345 6789" required />
+          </div>
+        </div>
+
+        <!-- INQUIRY DETAILS -->
+        <div class="form-section-title">Inquiry Details</div>
+        <div class="form-grid">
+          <div class="form-field full">
+            <label for="interested_product">Interested Product <span class="req">*</span></label>
+            <input type="text" id="interested_product" name="interested_product" placeholder="Which specific product(s) are you interested in?" required />
+          </div>
+          <div class="form-field full">
+            <label for="message">Message <span class="req">*</span></label>
+            <textarea id="message" name="message" placeholder="Include your requirements: quantity, specifications, budget range, delivery timeline, OEM/ODM needs, or any questions for the supplier..." required></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">SEND INQUIRY &#10148;</button>
+        <p class="form-note">Your inquiry will be forwarded to the supplier. Our team will facilitate the introduction.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0d0120;padding:28px 5%;text-align:center;border-top:1px solid rgba(57,255,20,0.1);">
+  <p style="font-size:0.8rem;color:rgba(255,255,255,0.35);">&copy; 2026 Philippine Sport Show &nbsp;·&nbsp; <a href="index.html" style="color:rgba(57,255,20,0.7);text-decoration:none;">Matchmaking Platform</a> &nbsp;&middot;&nbsp; <a href="../privacy.html" style="color:rgba(57,255,20,0.7);text-decoration:none;">Privacy Policy</a></p>
+</footer>
+
+<script>
+  function toggleNav(){ document.getElementById('navLinks').classList.toggle('open'); }
+
+  // Auto-fill supplier info from URL params
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var supplierName = params.get('supplier') || '';
+    var boothNum = params.get('booth') || '';
+    if(supplierName){
+      document.getElementById('supplier_company').value = decodeURIComponent(supplierName);
+      document.getElementById('bannerName').textContent = decodeURIComponent(supplierName);
+    } else {
+      document.getElementById('bannerName').textContent = 'Supplier Inquiry';
+    }
+    if(boothNum){
+      document.getElementById('booth_number').value = decodeURIComponent(boothNum);
+      document.getElementById('bannerBooth').textContent = 'Booth: ' + decodeURIComponent(boothNum);
+    }
+  })();
+</script>
+</body>
+</html>

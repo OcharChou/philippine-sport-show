@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | PSS 2026 Matchmaking Platform</title>
+  <meta name="description" content="Your submission has been received. Philippine Sport Show 2026 Matchmaking Platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple-dark: #1a0533; --purple-mid: #4b0082; --purple-light: #7c3aed;
+      --purple-grad: linear-gradient(135deg, #1a0533 0%, #4b0082 50%, #7c3aed 100%);
+      --neon: #39ff14; --white: #ffffff; --gray: #f0f0f8;
+      --text-dark: #1a0533; --text-light: #ffffffcc;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--text-dark); overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,5,51,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(57,255,20,0.15); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 42px; border-radius: 50%; }
+    .nav-logo-text { font-size: 1.05rem; font-weight: 900; color: var(--white); }
+    .nav-logo-text span { color: var(--neon); }
+
+    #home { min-height: 100vh; background: var(--purple-grad); display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 100px 20px 60px; position: relative; overflow: hidden; }
+    #home::before { content: ''; position: absolute; width: 700px; height: 700px; background: radial-gradient(circle, rgba(57,255,20,0.1) 0%, transparent 70%); border-radius: 50%; top: -150px; right: -150px; animation: float1 8s ease-in-out infinite; }
+    #home::after { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(124,58,237,0.2) 0%, transparent 70%); border-radius: 50%; bottom: -80px; left: -100px; animation: float2 10s ease-in-out infinite; }
+    @keyframes float1 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-28px);} }
+    @keyframes float2 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(22px);} }
+
+    .ty-inner { position: relative; z-index: 2; text-align: center; max-width: 700px; }
+    .ty-check { width: 90px; height: 90px; background: rgba(57,255,20,0.15); border: 3px solid var(--neon); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; animation: pop 0.55s cubic-bezier(0.175,0.885,0.32,1.275) both; }
+    @keyframes pop { from{transform:scale(0);opacity:0;} to{transform:scale(1);opacity:1;} }
+    .ty-check span { font-size: 2.8rem; color: var(--neon); }
+    .ty-badge { display: inline-block; background: rgba(57,255,20,0.15); border: 1px solid var(--neon); color: var(--neon); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; padding: 6px 20px; border-radius: 50px; margin-bottom: 18px; text-transform: uppercase; }
+    .ty-title { font-size: clamp(2rem, 5.5vw, 3.5rem); font-weight: 900; color: var(--white); margin-bottom: 16px; line-height: 1.1; }
+    .ty-title span { color: var(--neon); }
+    .ty-desc { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 40px; }
+    .ty-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn-neon { background: var(--neon); color: var(--purple-dark); border: none; padding: 14px 32px; font-size: 0.9rem; font-weight: 800; border-radius: 50px; text-decoration: none; display: inline-block; transition: transform 0.2s; }
+    .btn-neon:hover { transform: translateY(-3px); }
+    .btn-outline-w { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.4); padding: 12px 30px; font-size: 0.9rem; font-weight: 700; border-radius: 50px; text-decoration: none; display: inline-block; transition: all 0.2s; }
+    .btn-outline-w:hover { border-color: var(--neon); color: var(--neon); }
+
+    .next-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; position: relative; z-index: 2; max-width: 800px; width: 100%; }
+    .step-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 18px; padding: 24px 20px; text-align: left; animation: fadeUp 0.6s ease both; }
+    .step-card:nth-child(1){ animation-delay:0.2s; }
+    .step-card:nth-child(2){ animation-delay:0.4s; }
+    .step-card:nth-child(3){ animation-delay:0.6s; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:none;} }
+    .step-num { display: inline-block; background: var(--neon); color: var(--purple-dark); width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; font-size: 0.82rem; font-weight: 900; margin-bottom: 12px; }
+    .step-card h3 { font-size: 0.95rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+    .step-card p { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+    @media (max-width: 700px) {
+      .next-steps { grid-template-columns: 1fr; max-width: 400px; }
+      .ty-btns { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <img src="../logo.jpg" alt="PSS 2026" onerror="this.style.display='none'">
+    <span class="nav-logo-text">PSS <span>2026</span></span>
+  </a>
+</nav>
+
+<section id="home">
+  <div class="ty-inner">
+    <div class="ty-check"><span>&#10003;</span></div>
+    <div class="ty-badge">PSS 2026 · Matchmaking Platform</div>
+    <h1 class="ty-title">Thank You!<br><span>Submission Received.</span></h1>
+    <p class="ty-desc">
+      Your submission has been successfully received by our team.<br>
+      We will review it within <strong>1–2 business days</strong> and follow up via email.
+    </p>
+    <div class="ty-btns">
+      <a class="btn-neon" href="suppliers.html">Browse Supplier Directory</a>
+      <a class="btn-outline-w" href="buyer-request.html">Submit Another Request</a>
+      <a class="btn-outline-w" href="../index.html">Back to Main Site</a>
+    </div>
+  </div>
+
+  <div class="next-steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h3>Review Within 48h</h3>
+      <p>Our team reviews all submissions and will contact you at the email address you provided.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h3>Matchmaking &amp; Intro</h3>
+      <p>We'll forward your enquiry to relevant exhibitors and facilitate introductions between both parties.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h3>Meet at PSS 2026</h3>
+      <p>Finalize your meetings and visit us at SMX Convention Center, Manila — October 8–10, 2026.</p>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0d0120;padding:24px 5%;text-align:center;border-top:1px solid rgba(57,255,20,0.1);">
+  <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);">&copy; 2026 Philippine Sport Show &nbsp;·&nbsp; <a href="index.html" style="color:rgba(57,255,20,0.65);text-decoration:none;">Matchmaking Platform</a> &nbsp;&middot;&nbsp; <a href="../privacy.html" style="color:rgba(57,255,20,0.7);text-decoration:none;">Privacy Policy</a></p>
+</footer>
+</body>
+</html>

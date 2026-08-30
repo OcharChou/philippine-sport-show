@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exhibitor Submission | PSS 2026 Matchmaking Platform</title>
+  <meta name="description" content="Upload your company profile and product information to PSS 2026 Online Sourcing Platform. Get discovered by Philippines buyers and importers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple-dark: #1a0533; --purple-mid: #4b0082; --purple-light: #7c3aed;
+      --purple-grad: linear-gradient(135deg, #1a0533 0%, #4b0082 50%, #7c3aed 100%);
+      --neon: #39ff14; --white: #ffffff; --gray: #f0f0f8; --gray2: #f8f9fc;
+      --text-dark: #1a0533; --text-light: #ffffffcc; --border: #e0d4f7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--text-dark); overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,5,51,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(57,255,20,0.15); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 42px; border-radius: 50%; }
+    .nav-logo-text { font-size: 1.05rem; font-weight: 900; color: var(--white); letter-spacing: 1px; }
+    .nav-logo-text span { color: var(--neon); }
+    .nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.83rem; font-weight: 600; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--neon); }
+    .nav-cta { background: var(--neon) !important; color: var(--purple-dark) !important; padding: 8px 20px; border-radius: 50px; font-weight: 800 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--purple-grad); padding: 110px 5% 60px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(57,255,20,0.1) 0%, transparent 70%); border-radius: 50%; top: -100px; right: -80px; }
+    .page-hero-inner { position: relative; z-index: 2; max-width: 700px; }
+    .hero-badge { display: inline-block; background: rgba(57,255,20,0.15); border: 1px solid var(--neon); color: var(--neon); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; padding: 5px 18px; border-radius: 50px; margin-bottom: 18px; text-transform: uppercase; }
+    .page-hero h1 { font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 900; color: var(--white); line-height: 1.15; margin-bottom: 14px; }
+    .page-hero p { font-size: 1rem; color: var(--text-light); line-height: 1.7; }
+
+    /* FORM SECTION */
+    .form-section { padding: 60px 5%; background: var(--gray2); }
+    .form-wrap { max-width: 800px; margin: 0 auto; }
+
+    .form-card { background: var(--white); border-radius: 24px; padding: 48px 44px; box-shadow: 0 8px 40px rgba(75,0,130,0.1); border: 1px solid rgba(75,0,130,0.08); }
+
+    /* INFO BOX */
+    .info-box { background: rgba(57,255,20,0.08); border: 1px solid rgba(57,255,20,0.3); border-radius: 14px; padding: 16px 20px; margin-bottom: 36px; display: flex; gap: 12px; align-items: flex-start; }
+    .info-box .icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .info-box p { font-size: 0.85rem; color: var(--purple-mid); line-height: 1.6; font-weight: 600; }
+
+    /* FORM FIELDS */
+    .form-section-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--purple-light); margin: 32px 0 18px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+    .form-section-title:first-of-type { margin-top: 0; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--purple-mid); }
+    .form-field label .req { color: #e53e3e; }
+    .form-field input,
+    .form-field select,
+    .form-field textarea { width: 100%; min-width: 0; padding: 11px 15px; border: 2px solid var(--border); border-radius: 10px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: var(--text-dark); background: var(--gray); transition: border-color 0.2s, box-shadow 0.2s; outline: none; -webkit-appearance: none; appearance: none; box-sizing: border-box; }
+    .form-field input[type="file"] { padding: 9px 15px; cursor: pointer; }
+    .form-field select { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="%234b0082" stroke-width="2" fill="none" stroke-linecap="round"/></svg>'); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--purple-light); box-shadow: 0 0 0 3px rgba(124,58,237,0.12); background: var(--white); }
+    .form-field textarea { resize: vertical; min-height: 100px; }
+    .form-field .field-hint { font-size: 0.75rem; color: #999; margin-top: 3px; }
+
+    /* CHECKBOXES */
+    .check-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+    .check-item { display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 9px 12px; border-radius: 10px; border: 2px solid var(--border); background: var(--gray); transition: all 0.2s; }
+    .check-item:hover { border-color: var(--purple-light); }
+    .check-item input[type="checkbox"] { width: auto; min-width: 16px; cursor: pointer; accent-color: var(--purple-light); flex-shrink: 0; }
+    .check-item span { font-size: 0.8rem; font-weight: 600; color: var(--text-dark); }
+
+    /* RADIO */
+    .radio-group { display: flex; gap: 12px; flex-wrap: wrap; }
+    .radio-item { display: flex; align-items: center; gap: 7px; cursor: pointer; padding: 9px 16px; border-radius: 50px; border: 2px solid var(--border); background: var(--gray); transition: all 0.2s; }
+    .radio-item:hover { border-color: var(--purple-light); }
+    .radio-item input[type="radio"] { accent-color: var(--purple-light); cursor: pointer; }
+    .radio-item span { font-size: 0.83rem; font-weight: 600; }
+
+    /* SUBMIT */
+    .form-submit { margin-top: 36px; }
+    .submit-btn { width: 100%; background: var(--neon); color: var(--purple-dark); border: none; padding: 16px 40px; font-size: 1rem; font-weight: 800; border-radius: 50px; cursor: pointer; letter-spacing: 0.5px; transition: transform 0.2s, box-shadow 0.2s; font-family: 'Montserrat', sans-serif; }
+    .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(57,255,20,0.55); }
+    .form-note { text-align: center; font-size: 0.78rem; color: #aaa; margin-top: 12px; line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(26,5,51,0.98); padding: 20px 5%; border-bottom: 1px solid rgba(57,255,20,0.15); gap: 14px; }
+    }
+    @media (max-width: 600px) {
+      .form-card { padding: 32px 20px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .check-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="../index.html">
+    <img src="../logo.jpg" alt="PSS 2026" onerror="this.style.display='none'">
+    <span class="nav-logo-text">PSS <span>2026</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Matchmaking</a></li>
+    <li><a href="suppliers.html">Suppliers</a></li>
+    <li><a href="buyer-request.html">Buyers</a></li>
+    <li><a href="../registration.html" class="nav-cta">REGISTER</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-badge">&#127970; For Exhibitors</div>
+    <h1>Upload Your Company &amp; Products</h1>
+    <p>Submit your company profile and product catalogue to be featured in the PSS 2026 Online Supplier Directory. Reach Philippines importers, distributors and retailers before the show opens.</p>
+  </div>
+</div>
+
+<!-- FORM -->
+<section class="form-section">
+  <div class="form-wrap">
+    <div class="form-card">
+
+      <div class="info-box">
+        <span class="icon">&#9432;</span>
+        <p>After submission, our team will review your profile within 1–2 business days. Approved profiles will be published on the Supplier Directory page. You will be notified by email.</p>
+      </div>
+
+      <form name="pss-exhibitor-submission" method="POST" action="/matchmaking/thank-you" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="pss-exhibitor-submission" />
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <!-- COMPANY INFO -->
+        <div class="form-section-title">Company Information</div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="company_name">Company Name <span class="req">*</span></label>
+            <input type="text" id="company_name" name="company_name" placeholder="e.g. ABC Sports Co., Ltd." required />
+          </div>
+          <div class="form-field">
+            <label for="booth_number">Booth Number</label>
+            <input type="text" id="booth_number" name="booth_number" placeholder="e.g. A-101 (if assigned)" />
+          </div>
+          <div class="form-field">
+            <label for="contact_person">Contact Person <span class="req">*</span></label>
+            <input type="text" id="contact_person" name="contact_person" placeholder="Your full name" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Business Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="your@company.com" required />
+          </div>
+          <div class="form-field">
+            <label for="whatsapp">WhatsApp / Phone <span class="req">*</span></label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+86 138 0000 0000" required />
+          </div>
+          <div class="form-field">
+            <label for="country">Country / Region <span class="req">*</span></label>
+            <select id="country" name="country" required>
+              <option value="">Select country</option>
+              <option>China</option><option>Philippines</option><option>Taiwan</option>
+              <option>Japan</option><option>South Korea</option><option>Vietnam</option>
+              <option>Thailand</option><option>Malaysia</option><option>Singapore</option>
+              <option>Indonesia</option><option>India</option><option>Hong Kong</option>
+              <option>United States</option><option>Germany</option><option>Italy</option>
+              <option>Turkey</option><option>Australia</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label for="website">Company Website</label>
+            <input type="text" id="website" name="website" placeholder="https://www.yourcompany.com" />
+          </div>
+          <div class="form-field full">
+            <label for="company_intro">Company Introduction <span class="req">*</span></label>
+            <textarea id="company_intro" name="company_intro" placeholder="Briefly describe your company background, manufacturing capabilities, years of experience, key markets..." style="min-height:120px;" required></textarea>
+          </div>
+        </div>
+
+        <!-- PRODUCTS -->
+        <div class="form-section-title">Product Information</div>
+        <div class="form-grid">
+          <div class="form-field full">
+            <label>Product Categories <span class="req">*</span></label>
+            <div class="check-grid">
+              <label class="check-item"><input type="checkbox" name="product_categories" value="Sportswear"><span>Sportswear</span></label>
+              <label class="check-item"><input type="checkbox" name="product_categories" value="Fitness Equipment"><span>Fitness Equipment</span></label>
+              <label class="check-item"><input type="checkbox" name="product_categories" value="Basketball Products"><span>Basketball Products</span></label>
+              <label class="check-item"><input type="checkbox" name="product_categories" value="Pickleball"><span>Pickleball</span></label>
+              <label class="check-item"><input type="checkbox" name="product_categories" value="Outdoor & Camping"><span>Outdoor &amp; Camping</span></label>
+              <label class="check-item"><input type="checkbox" name="product_categories" value="Sports Shoes"><span>Sports Shoes</span></label>
+              <label class="check-item"><input type="checkbox" name="product_categories" value="Sports Bags"><span>Sports Bags</span></label>
+              <label class="check-item"><input type="checkbox" name="product_categories" value="Water Sports"><span>Water Sports</span></label>
+              <label class="check-item"><input type="checkbox" name="product_categories" value="Team Sports"><span>Team Sports</span></label>
+              <label class="check-item"><input type="checkbox" name="product_categories" value="Sports Accessories"><span>Sports Accessories</span></label>
+              <label class="check-item"><input type="checkbox" name="product_categories" value="Other Sports Products"><span>Other Sports Products</span></label>
+            </div>
+          </div>
+          <div class="form-field full">
+            <label for="product_keywords">Product Keywords <span class="req">*</span></label>
+            <input type="text" id="product_keywords" name="product_keywords" placeholder="e.g. yoga mat, resistance band, gym gloves, pickleball paddle" required />
+            <span class="field-hint">Separate with commas. Buyers search by these keywords.</span>
+          </div>
+          <div class="form-field full">
+            <label for="main_products">Main Products <span class="req">*</span></label>
+            <textarea id="main_products" name="main_products" placeholder="List your top 3–5 products with brief descriptions, specs, or competitive advantages..." required></textarea>
+          </div>
+          <div class="form-field full">
+            <label for="product_description">Additional Product Description</label>
+            <textarea id="product_description" name="product_description" placeholder="MOQ, lead time, certifications (CE, ISO, etc.), price range, customization options..."></textarea>
+          </div>
+        </div>
+
+        <!-- CAPABILITIES -->
+        <div class="form-section-title">Capabilities &amp; Opportunities</div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label>OEM / ODM Available?</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="oem_odm" value="OEM Available"><span>OEM Available</span></label>
+              <label class="radio-item"><input type="radio" name="oem_odm" value="ODM Available"><span>ODM Available</span></label>
+              <label class="radio-item"><input type="radio" name="oem_odm" value="Both OEM & ODM"><span>Both</span></label>
+              <label class="radio-item"><input type="radio" name="oem_odm" value="No"><span>No</span></label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Looking for Distributor / Agent in the Philippines?</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="looking_for_distributor" value="Yes"><span>Yes</span></label>
+              <label class="radio-item"><input type="radio" name="looking_for_distributor" value="No"><span>No</span></label>
+              <label class="radio-item"><input type="radio" name="looking_for_distributor" value="Open to discuss"><span>Open to discuss</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT IMAGE -->
+        <div class="form-section-title">Product Image Upload</div>
+        <div class="form-grid">
+          <div class="form-field full">
+            <label for="product_image">Product Image <span class="req">*</span></label>
+            <input type="file" id="product_image" name="product_image" accept="image/*" required />
+            <span class="field-hint">Upload 1 representative product image. Formats: JPG, PNG, WEBP. Max 5MB. This image will appear on your supplier card.</span>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="form-submit">
+          <button type="submit" class="submit-btn">SUBMIT COMPANY PROFILE &#10148;</button>
+          <p class="form-note">By submitting, you agree to have your company information displayed on the PSS 2026 Online Supplier Directory after review.<br>Our team will contact you at the email provided within 1–2 business days.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0d0120;padding:28px 5%;text-align:center;border-top:1px solid rgba(57,255,20,0.1);">
+  <p style="font-size:0.8rem;color:rgba(255,255,255,0.35);">&copy; 2026 Philippine Sport Show &nbsp;·&nbsp; <a href="index.html" style="color:rgba(57,255,20,0.7);text-decoration:none;">Matchmaking Platform</a> &nbsp;·&nbsp; info@sportshow.ph &nbsp;&middot;&nbsp; <a href="../privacy.html" style="color:rgba(57,255,20,0.7);text-decoration:none;">Privacy Policy</a></p>
+</footer>
+
+<script>
+  function toggleNav(){ document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click',function(){ document.getElementById('navLinks').classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

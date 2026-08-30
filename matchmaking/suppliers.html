@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supplier Directory | PSS 2026 Matchmaking Platform</title>
+  <meta name="description" content="Browse sports suppliers and exhibitors at Philippine Sport Show 2026. Search by product category or keyword." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple-dark: #1a0533; --purple-mid: #4b0082; --purple-light: #7c3aed;
+      --purple-grad: linear-gradient(135deg, #1a0533 0%, #4b0082 50%, #7c3aed 100%);
+      --neon: #39ff14; --white: #ffffff; --gray: #f0f0f8; --gray2: #f8f9fc;
+      --text-dark: #1a0533; --text-light: #ffffffcc; --border: #e2e8f0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--gray2); color: var(--text-dark); overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,5,51,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(57,255,20,0.15); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 42px; border-radius: 50%; }
+    .nav-logo-text { font-size: 1.05rem; font-weight: 900; color: var(--white); }
+    .nav-logo-text span { color: var(--neon); }
+    .nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.83rem; font-weight: 600; transition: color 0.25s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--neon); }
+    .nav-cta { background: var(--neon) !important; color: var(--purple-dark) !important; padding: 8px 20px; border-radius: 50px; font-weight: 800 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--purple-grad); padding: 110px 5% 56px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(57,255,20,0.1) 0%, transparent 70%); border-radius: 50%; top: -80px; right: -100px; }
+    .page-hero-inner { position: relative; z-index: 2; max-width: 900px; }
+    .hero-badge { display: inline-block; background: rgba(57,255,20,0.15); border: 1px solid var(--neon); color: var(--neon); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; padding: 5px 18px; border-radius: 50px; margin-bottom: 18px; text-transform: uppercase; }
+    .page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: var(--white); margin-bottom: 12px; }
+    .page-hero p { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 24px; }
+
+    /* SEARCH & FILTER BAR */
+    .search-bar-wrap { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 18px 20px; position: relative; z-index: 2; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .search-input-wrap { position: relative; flex: 1; min-width: 220px; }
+    .search-input-wrap .si-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 1rem; pointer-events: none; }
+    #searchInput { width: 100%; padding: 10px 14px 10px 40px; border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; font-family: 'Montserrat', sans-serif; font-size: 0.88rem; background: rgba(255,255,255,0.1); color: var(--white); outline: none; transition: border-color 0.2s; }
+    #searchInput::placeholder { color: rgba(255,255,255,0.55); }
+    #searchInput:focus { border-color: var(--neon); background: rgba(255,255,255,0.15); }
+    #catFilter { padding: 10px 36px 10px 14px; border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; font-family: 'Montserrat', sans-serif; font-size: 0.88rem; background: rgba(255,255,255,0.1); color: var(--white); outline: none; -webkit-appearance: none; appearance: none; cursor: pointer; background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/></svg>'); background-repeat: no-repeat; background-position: right 12px center; min-width: 200px; transition: border-color 0.2s; }
+    #catFilter:focus { border-color: var(--neon); }
+    #catFilter option { background: var(--purple-dark); color: var(--white); }
+    .search-btn { background: var(--neon); color: var(--purple-dark); border: none; padding: 10px 22px; border-radius: 10px; font-family: 'Montserrat', sans-serif; font-size: 0.88rem; font-weight: 700; cursor: pointer; transition: transform 0.2s; white-space: nowrap; }
+    .search-btn:hover { transform: translateY(-2px); }
+
+    /* MAIN CONTENT */
+    .dir-section { padding: 50px 5%; }
+    .dir-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+    .dir-header h2 { font-size: 1.2rem; font-weight: 800; color: var(--purple-dark); }
+    #resultCount { font-size: 0.85rem; color: #888; }
+    .submit-cta { display: inline-block; background: var(--purple-mid); color: var(--white); padding: 9px 20px; border-radius: 50px; font-size: 0.82rem; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .submit-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(75,0,130,0.35); }
+
+    /* SUPPLIER GRID */
+    #supplierGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 24px; }
+
+    /* SUPPLIER CARD */
+    .supplier-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(75,0,130,0.07); border: 1px solid var(--border); transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
+    .supplier-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(75,0,130,0.15); }
+    .card-img { width: 100%; height: 180px; object-fit: cover; background: linear-gradient(135deg, #ede9fe, #ddd6fe); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .card-img img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .card-img-placeholder { width: 100%; height: 180px; background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .card-body { padding: 20px 20px 24px; flex: 1; display: flex; flex-direction: column; }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+    .card-company { font-size: 1rem; font-weight: 800; color: var(--purple-dark); line-height: 1.3; }
+    .card-booth { background: var(--gray); color: var(--purple-mid); font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 50px; white-space: nowrap; flex-shrink: 0; border: 1px solid #e0d4f7; }
+    .card-country { font-size: 0.78rem; color: #888; margin-bottom: 10px; display: flex; align-items: center; gap: 5px; }
+    .card-categories { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .cat-badge { background: linear-gradient(90deg, #ede9fe, #ddd6fe); color: var(--purple-mid); font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 50px; }
+    .card-products { font-size: 0.82rem; color: #555; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-intro { font-size: 0.8rem; color: #777; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; flex: 1; margin-bottom: 16px; }
+    .card-tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .card-tag { background: rgba(57,255,20,0.1); border: 1px solid rgba(57,255,20,0.3); color: #2d6a0a; font-size: 0.68rem; font-weight: 700; padding: 3px 9px; border-radius: 50px; }
+    .card-footer { margin-top: auto; }
+    .inquiry-btn { display: block; width: 100%; text-align: center; background: var(--purple-grad); color: var(--white); padding: 11px 20px; border-radius: 12px; font-size: 0.88rem; font-weight: 700; text-decoration: none; transition: opacity 0.2s, transform 0.2s; font-family: 'Montserrat', sans-serif; cursor: pointer; border: none; }
+    .inquiry-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    /* FEATURED BADGE */
+    .featured-ribbon { position: absolute; top: 14px; left: 14px; background: var(--neon); color: var(--purple-dark); font-size: 0.65rem; font-weight: 900; padding: 4px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; }
+    .card-img-wrap { position: relative; }
+
+    /* NO RESULTS */
+    #noResults { display: none; text-align: center; padding: 80px 20px; }
+    #noResults .nr-emoji { font-size: 3rem; margin-bottom: 16px; }
+    #noResults h3 { font-size: 1.2rem; font-weight: 700; color: var(--purple-mid); margin-bottom: 8px; }
+    #noResults p { font-size: 0.9rem; color: #888; }
+
+    /* SUBMIT PROMPT */
+    .submit-prompt { background: var(--purple-grad); border-radius: 20px; padding: 40px 36px; text-align: center; margin-top: 52px; }
+    .submit-prompt h3 { font-size: 1.3rem; font-weight: 900; color: var(--white); margin-bottom: 10px; }
+    .submit-prompt p { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+    .submit-prompt a { display: inline-block; background: var(--neon); color: var(--purple-dark); padding: 12px 30px; border-radius: 50px; font-weight: 800; font-size: 0.9rem; text-decoration: none; transition: transform 0.2s; }
+    .submit-prompt a:hover { transform: translateY(-2px); }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(26,5,51,0.98); padding: 20px 5%; border-bottom: 1px solid rgba(57,255,20,0.15); gap: 14px; }
+      #supplierGrid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .search-bar-wrap { flex-direction: column; }
+      #catFilter { min-width: 100%; }
+      #supplierGrid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="../index.html">
+    <img src="../logo.jpg" alt="PSS 2026" onerror="this.style.display='none'">
+    <span class="nav-logo-text">PSS <span>2026</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Matchmaking</a></li>
+    <li><a href="suppliers.html" class="active">Suppliers</a></li>
+    <li><a href="buyer-request.html">Buyers</a></li>
+    <li><a href="exhibitor-submit.html">Exhibitors</a></li>
+    <li><a href="../registration.html" class="nav-cta">REGISTER</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-badge">&#128270; Supplier Directory</div>
+    <h1>PSS 2026 Exhibitors &amp; Sports Suppliers</h1>
+    <p>Browse sports product suppliers and exhibitors from across Asia. Search by product category or keyword to find exactly what you need.</p>
+    <div class="search-bar-wrap">
+      <div class="search-input-wrap">
+        <span class="si-icon">&#128270;</span>
+        <input type="text" id="searchInput" placeholder="Search by company, product, or keyword..." />
+      </div>
+      <select id="catFilter">
+        <option value="">All Categories</option>
+        <option>Sportswear</option>
+        <option>Fitness Equipment</option>
+        <option>Basketball Products</option>
+        <option>Pickleball</option>
+        <option>Outdoor &amp; Camping</option>
+        <option>Sports Shoes</option>
+        <option>Sports Bags</option>
+        <option>Water Sports</option>
+        <option>Team Sports</option>
+        <option>Sports Accessories</option>
+        <option>Other Sports Products</option>
+      </select>
+      <button class="search-btn" onclick="doSearch()">&#128270; Search</button>
+    </div>
+  </div>
+</div>
+
+<section class="dir-section">
+  <div class="dir-header">
+    <h2>&#127970; Exhibitor Directory</h2>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <span id="resultCount"></span>
+      <a class="submit-cta" href="exhibitor-submit.html">+ Submit Your Profile</a>
+    </div>
+  </div>
+
+  <div id="supplierGrid"></div>
+  <div id="noResults">
+    <div class="nr-emoji">&#128270;</div>
+    <h3>No suppliers found</h3>
+    <p>Try a different keyword or category. More exhibitors are joining every week.</p>
+  </div>
+
+  <div class="submit-prompt">
+    <h3>Are you an exhibitor?</h3>
+    <p>Get discovered by buyers online before the show. Submit your company profile and products today.</p>
+    <a href="exhibitor-submit.html">Submit Your Company Profile &#10148;</a>
+  </div>
+</section>
+
+<footer style="background:#0d0120;padding:28px 5%;text-align:center;border-top:1px solid rgba(57,255,20,0.1);">
+  <p style="font-size:0.8rem;color:rgba(255,255,255,0.35);">&copy; 2026 Philippine Sport Show &nbsp;·&nbsp; <a href="index.html" style="color:rgba(57,255,20,0.7);text-decoration:none;">Matchmaking Platform</a> &nbsp;·&nbsp; info@sportshow.ph &nbsp;&middot;&nbsp; <a href="../privacy.html" style="color:rgba(57,255,20,0.7);text-decoration:none;">Privacy Policy</a></p>
+</footer>
+
+<script>
+  function toggleNav(){ document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click',function(){ document.getElementById('navLinks').classList.remove('open'); });
+  });
+
+  var allSuppliers = [];
+
+  // Load suppliers.json
+  fetch('suppliers.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      allSuppliers = data;
+      // Apply URL param filter on load
+      var params = new URLSearchParams(window.location.search);
+      var cat = params.get('cat') || '';
+      var kw = params.get('q') || '';
+      if(cat) document.getElementById('catFilter').value = cat;
+      if(kw) document.getElementById('searchInput').value = kw;
+      renderSuppliers(filterSuppliers(allSuppliers));
+    })
+    .catch(function(){
+      document.getElementById('noResults').style.display = 'block';
+    });
+
+  function filterSuppliers(data){
+    var kw = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+    var cat = document.getElementById('catFilter').value;
+    return data.filter(function(s){
+      var matchCat = !cat || (s.product_categories && s.product_categories.indexOf(cat) > -1);
+      if(!kw) return matchCat;
+      var searchable = [
+        s.company_name, s.main_products, s.product_keywords,
+        s.company_intro, (s.product_categories||[]).join(' ')
+      ].join(' ').toLowerCase();
+      return matchCat && searchable.indexOf(kw) > -1;
+    });
+  }
+
+  function renderSuppliers(data){
+    var grid = document.getElementById('supplierGrid');
+    var noRes = document.getElementById('noResults');
+    var count = document.getElementById('resultCount');
+    grid.innerHTML = '';
+    if(data.length === 0){
+      noRes.style.display = 'block';
+      count.textContent = '0 suppliers found';
+      return;
+    }
+    noRes.style.display = 'none';
+    count.textContent = data.length + ' supplier' + (data.length > 1 ? 's' : '') + ' found';
+
+    // Sort: featured first
+    var sorted = data.slice().sort(function(a,b){ return (b.featured?1:0)-(a.featured?1:0); });
+
+    sorted.forEach(function(s){
+      var cats = (s.product_categories||[]).map(function(c){ return '<span class="cat-badge">'+escHtml(c)+'</span>'; }).join('');
+      var tags = [];
+      if(s.oem_odm && s.oem_odm !== 'No') tags.push(escHtml(s.oem_odm));
+      if(s.looking_for_distributor === 'Yes') tags.push('Seeking Distributor');
+      var tagHtml = tags.map(function(t){ return '<span class="card-tag">'+t+'</span>'; }).join('');
+      var featuredBadge = s.featured ? '<span class="featured-ribbon">&#11088; Featured</span>' : '';
+      var imgHtml = (s.product_image && s.product_image !== 'placeholder.jpg')
+        ? '<img src="'+escHtml(s.product_image)+'" alt="'+escHtml(s.company_name)+'" onerror="this.parentElement.innerHTML=\'<div style=&quot;width:100%;height:180px;background:linear-gradient(135deg,#ede9fe,#c4b5fd);display:flex;align-items:center;justify-content:center;font-size:3rem;&quot;>&#127947;</div>\';">'
+        : '<div class="card-img-placeholder">&#127947;</div>';
+
+      var inquiryUrl = 'inquiry.html?supplier=' + encodeURIComponent(s.company_name) + '&booth=' + encodeURIComponent(s.booth_number||'');
+
+      var card = document.createElement('div');
+      card.className = 'supplier-card';
+      card.innerHTML = [
+        '<div class="card-img-wrap">',
+          imgHtml,
+          featuredBadge,
+        '</div>',
+        '<div class="card-body">',
+          '<div class="card-top">',
+            '<div class="card-company">'+escHtml(s.company_name)+'</div>',
+            s.booth_number ? '<span class="card-booth">'+escHtml(s.booth_number)+'</span>' : '',
+          '</div>',
+          '<div class="card-country">&#127760; '+escHtml(s.country||'')+'</div>',
+          '<div class="card-categories">'+cats+'</div>',
+          '<div class="card-products"><strong>Products:</strong> '+escHtml(s.main_products||'')+'</div>',
+          '<div class="card-intro">'+escHtml(s.company_intro||'')+'</div>',
+          tags.length ? '<div class="card-tags">'+tagHtml+'</div>' : '',
+          '<div class="card-footer">',
+            '<a class="inquiry-btn" href="'+inquiryUrl+'">&#128140; Send Inquiry</a>',
+          '</div>',
+        '</div>'
+      ].join('');
+      grid.appendChild(card);
+    });
+  }
+
+  function doSearch(){
+    renderSuppliers(filterSuppliers(allSuppliers));
+  }
+
+  document.getElementById('searchInput').addEventListener('keyup', function(e){
+    if(e.key === 'Enter') doSearch();
+  });
+  document.getElementById('catFilter').addEventListener('change', doSearch);
+
+  function escHtml(str){
+    return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+</script>
+</body>
+</html>
