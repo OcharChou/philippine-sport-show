@@ -1,0 +1,90 @@
+[build]
+  publish = "."
+
+# Matchmaking platform routes - URL rewrites (200 = serve without redirect)
+[[redirects]]
+  from = "/matchmaking"
+  to = "/matchmaking/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/matchmaking/exhibitor-submit"
+  to = "/matchmaking/exhibitor-submit.html"
+  status = 200
+
+[[redirects]]
+  from = "/matchmaking/buyer-request"
+  to = "/matchmaking/buyer-request.html"
+  status = 200
+
+[[redirects]]
+  from = "/matchmaking/suppliers"
+  to = "/matchmaking/suppliers.html"
+  status = 200
+
+[[redirects]]
+  from = "/matchmaking/inquiry"
+  to = "/matchmaking/inquiry.html"
+  status = 200
+
+# Thank-you page redirect after form submission (301 = real redirect, required for Netlify Forms)
+[[redirects]]
+  from = "/matchmaking/thank-you"
+  to = "/matchmaking/thank-you.html"
+  status = 301
+
+# Main site routes
+[[redirects]]
+  from = "/thank-you"
+  to = "/thank-you.html"
+  status = 301
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/registration"
+  to = "/registration.html"
+  status = 200
+
+# Exhibitors directory (list page at root; detail pages in /exhibitors/ folder)
+[[redirects]]
+  from = "/exhibitors"
+  to = "/exhibitors.html"
+  status = 200
+
+[[redirects]]
+  from = "/exhibitors/"
+  to = "/exhibitors.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/*.json"
+  [headers.values]
+    Cache-Control = "no-cache"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "max-age=31536000, immutable"

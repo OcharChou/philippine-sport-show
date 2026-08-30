@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration | Philippine Sport Show 2026 — Sports Trade Expo in Manila</title>
+  <meta name="description" content="Register as an exhibitor or buyer for Philippine Sport Show 2026. Book your booth or apply for free buyer credentials at the leading B2B sports trade expo in Manila." />
+  <meta property="og:title" content="Registration | Philippine Sport Show 2026" />
+  <meta property="og:description" content="Book a booth or register as a buyer — Philippine Sport Show 2026, October 8–10, Manila." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple-dark: #1a0533;
+      --purple-mid: #4b0082;
+      --purple-light: #7c3aed;
+      --purple-grad: linear-gradient(135deg, #1a0533 0%, #4b0082 50%, #7c3aed 100%);
+      --neon: #39ff14;
+      --neon-light: #a8ff78;
+      --white: #ffffff;
+      --gray: #f0f0f8;
+      --text-dark: #1a0533;
+      --text-light: #ffffffcc;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', 'Noto Sans SC', sans-serif; background: var(--white); color: var(--text-dark); overflow-x: hidden; }
+
+    /* NAVBAR */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,5,51,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(57,255,20,0.15); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 42px; width: auto; border-radius: 50%; }
+    .nav-logo-text { font-size: 1.1rem; font-weight: 900; color: var(--white); letter-spacing: 1px; }
+    .nav-logo-text span { color: var(--neon); }
+    .nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--neon); }
+    .nav-cta { background: var(--neon) !important; color: var(--purple-dark) !important; padding: 9px 22px; border-radius: 50px; font-weight: 800 !important; letter-spacing: 1px; transition: transform 0.2s, box-shadow 0.2s !important; }
+    .nav-cta:hover { transform: translateY(-2px) !important; box-shadow: 0 4px 20px rgba(57,255,20,0.5) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* HERO */
+    #home { min-height: 100vh; background: var(--purple-grad); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 68px; padding-bottom: 60px; }
+    #home::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(57,255,20,0.12) 0%, transparent 70%); border-radius: 50%; top: -100px; right: -100px; animation: float1 8s ease-in-out infinite; }
+    #home::after { content: ''; position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(124,58,237,0.25) 0%, transparent 70%); border-radius: 50%; bottom: 50px; left: -80px; animation: float2 10s ease-in-out infinite; }
+    @keyframes float1 { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-30px) scale(1.05);} }
+    @keyframes float2 { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(20px) scale(0.95);} }
+
+    /* TYPE SELECTOR */
+    .type-selector { position: relative; z-index: 2; text-align: center; max-width: 700px; padding: 40px 20px 0; }
+    .type-selector .hero-badge { display: inline-block; background: rgba(57,255,20,0.15); border: 1px solid var(--neon); color: var(--neon); font-size: 0.78rem; font-weight: 700; letter-spacing: 3px; padding: 6px 20px; border-radius: 50px; margin-bottom: 20px; text-transform: uppercase; }
+    .type-selector h1 { font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 16px; text-shadow: 0 4px 30px rgba(0,0,0,0.4); }
+    .type-selector .hero-sub { font-size: clamp(0.95rem, 2.5vw, 1.1rem); color: var(--text-light); margin-bottom: 36px; line-height: 1.7; }
+    .type-tabs { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 0; }
+    .type-tab { background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.25); color: var(--white); padding: 12px 28px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; display: flex; align-items: center; gap: 8px; }
+    .type-tab:hover { border-color: var(--neon); color: var(--neon); }
+    .type-tab.active { background: var(--neon); border-color: var(--neon); color: var(--purple-dark); }
+    .type-tab svg { width: 18px; height: 18px; }
+
+    /* FORM AREA */
+    .form-wrap { position: relative; z-index: 2; width: 100%; max-width: 700px; padding: 0 20px 40px; }
+    .reg-form { background: var(--white); border-radius: 28px; padding: 48px 44px; box-shadow: 0 20px 60px rgba(26,5,51,0.4); margin-top: 32px; overflow: hidden; }
+    .reg-form h2 { font-size: 1.3rem; font-weight: 900; color: var(--purple-dark); margin-bottom: 6px; }
+    .reg-form .form-sub { font-size: 0.88rem; color: #888; margin-bottom: 28px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label { font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--purple-mid); }
+    .form-field input, .form-field select, .form-field textarea { width: 100%; min-width: 0; padding: 12px 16px; border: 2px solid #e0d4f7; border-radius: 12px; font-family: 'Montserrat', sans-serif; font-size: 0.92rem; color: var(--text-dark); background: var(--gray); transition: border-color 0.2s, box-shadow 0.2s; outline: none; appearance: none; -webkit-appearance: none; box-sizing: border-box; }
+    .form-field select { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="%234b0082" stroke-width="2" fill="none" stroke-linecap="round"/></svg>'); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--purple-light); box-shadow: 0 0 0 3px rgba(124,58,237,0.15); }
+    .form-field textarea { resize: vertical; min-height: 90px; }
+    .reg-type-hint { font-size: 0.78rem; color: var(--purple-light); margin-top: 2px; display: none; }
+    .reg-type-hint.visible { display: block; }
+
+    /* CATEGORIES CHECKBOXES */
+    .cat-checkboxes { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 10px; }
+    .cat-check { display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 8px 12px; border-radius: 10px; border: 2px solid #e0d4f7; transition: all 0.2s; background: var(--gray); box-sizing: border-box; min-width: 0; }
+    .cat-check:hover { border-color: var(--purple-light); }
+    .cat-check input { width: auto; min-width: 16px; cursor: pointer; accent-color: var(--purple-light); flex-shrink: 0; }
+    .cat-check span { font-size: 0.8rem; font-weight: 600; color: var(--text-dark); word-break: break-word; }
+
+    /* SUBMIT */
+    .form-submit { margin-top: 28px; }
+    .submit-btn { width: 100%; background: var(--neon); color: var(--purple-dark); border: none; padding: 16px 40px; font-size: 1rem; font-weight: 800; border-radius: 50px; cursor: pointer; letter-spacing: 0.5px; transition: transform 0.2s, box-shadow 0.2s; font-family: 'Montserrat', sans-serif; }
+    .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(57,255,20,0.6); }
+    .submit-btn:active { transform: translateY(-1px); }
+    .form-note { text-align: center; font-size: 0.78rem; color: #aaa; margin-top: 12px; }
+
+    /* INFO CARDS */
+    .info-cards { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 700px; padding: 0 20px 50px; }
+    .info-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 20px 16px; text-align: center; min-width: 0; box-sizing: border-box; }
+    .info-card p { word-break: break-word; }
+    .info-card .ic-emoji { font-size: 1.8rem; display: block; margin-bottom: 8px; }
+    .info-card h4 { font-size: 0.8rem; font-weight: 700; color: var(--neon); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .info-card p { font-size: 0.82rem; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+    /* FLOATING */
+    .float-group { position: fixed; right: 24px; bottom: 32px; z-index: 999; display: flex; flex-direction: column; gap: 12px; }
+    .float-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; cursor: pointer; text-decoration: none; border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+    .float-btn:hover { transform: scale(1.15); box-shadow: 0 6px 28px rgba(0,0,0,0.4); }
+    .float-top { background: var(--purple-mid); color: var(--white); font-size: 1.1rem; }
+    .float-tip { position: absolute; right: 64px; background: rgba(26,5,51,0.95); color: var(--white); font-size: 0.78rem; font-weight: 600; white-space: nowrap; padding: 6px 12px; border-radius: 8px; opacity: 0; pointer-events: none; transition: opacity 0.2s; border: 1px solid rgba(57,255,20,0.3); }
+    .float-btn:hover .float-tip { opacity: 1; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(26,5,51,0.97); padding: 20px 5%; border-bottom: 1px solid rgba(57,255,20,0.15); gap: 14px; }
+      .info-cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .reg-form { padding: 32px 20px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .cat-checkboxes { grid-template-columns: repeat(2, 1fr); }
+      .type-tabs { gap: 6px; justify-content: flex-start; overflow-x: auto; padding-bottom: 4px; flex-wrap: nowrap; }
+      .type-tab { padding: 9px 14px; font-size: 0.75rem; white-space: nowrap; flex-shrink: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <img src="logo.jpg" alt="PSS 2026" onerror="this.style.display='none'">
+    <span class="nav-logo-text">PSS <span>2026</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#exhibit">Exhibit</a></li>
+    <li><a href="index.html#visit">Visit</a></li>
+    <li><a href="index.html#categories">Categories</a></li>
+    <li><a href="index.html#venue">Venue</a></li>
+    <li><a href="registration.html" class="nav-cta">REGISTRATION</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO + FORM -->
+<section id="home">
+  <div class="type-selector reveal">
+    <div class="hero-badge">Manila &nbsp;·&nbsp; October 8–10, 2026</div>
+    <h1>Register Now</h1>
+    <p class="hero-sub">Join Philippine Sport Show 2026 &mdash; the leading B2B sports trade expo in Manila.<br>Book your booth or register as a qualified buyer for free entry.</p>
+    <div class="type-tabs">
+      <button class="type-tab active" id="tab-exhibitor" onclick="switchType('exhibitor')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+        Exhibitor
+      </button>
+      <button class="type-tab" id="tab-buyer" onclick="switchType('buyer')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Buyer
+      </button>
+      <button class="type-tab" id="tab-distributor" onclick="switchType('distributor')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        Distributor
+      </button>
+      <button class="type-tab" id="tab-brand" onclick="switchType('brand')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Brand Rep
+      </button>
+      <button class="type-tab" id="tab-media" onclick="switchType('media')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        Media
+      </button>
+      <button class="type-tab" id="tab-partner" onclick="switchType('partner')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        Partner
+      </button>
+    </div>
+  </div>
+
+  <div class="form-wrap reveal">
+    <form class="reg-form" name="pss-registration" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" id="regForm">
+      <input type="hidden" name="form-name" value="pss-registration" />
+
+      <!-- Honeypot -->
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+      <!-- Hidden tracking fields -->
+      <input type="hidden" name="source" id="srcField" value="" />
+      <input type="hidden" name="page_url" id="pageUrlField" value="" />
+      <input type="hidden" name="utm_source" id="utmSrcField" value="" />
+      <input type="hidden" name="utm_medium" id="utmMedField" value="" />
+      <input type="hidden" name="utm_campaign" id="utmCmpField" value="" />
+
+      <h2 id="formTitle">Exhibitor Registration</h2>
+      <p class="form-sub" id="formSub">Secure your booth at PSS 2026 — October 8–10, Manila</p>
+
+      <div class="form-grid">
+        <div class="form-field full">
+          <label for="regType">Registration Type *</label>
+          <select id="regType" name="registration_type" required onchange="syncType(this.value)">
+            <option value="">Select your type</option>
+            <option value="Exhibitor">Exhibitor — Book a Booth</option>
+            <option value="Buyer">Buyer — Free Admission</option>
+            <option value="Distributor">Distributor / Importer</option>
+            <option value="Brand Representative">Brand Representative</option>
+            <option value="Media">Media / Press</option>
+            <option value="Partner">Partner / Sponsor</option>
+          </select>
+          <span class="reg-type-hint" id="typeHint-exhibitor">Showcase your products to 5,000+ qualified buyers</span>
+          <span class="reg-type-hint" id="typeHint-buyer">Free entry for qualified buyers, retailers &amp; gym owners</span>
+          <span class="reg-type-hint" id="typeHint-distributor">Connect with manufacturers for distribution partnerships</span>
+          <span class="reg-type-hint" id="typeHint-brand">Represent your brand at the leading sports trade show</span>
+          <span class="reg-type-hint" id="typeHint-media">Media accreditation for press coverage</span>
+          <span class="reg-type-hint" id="typeHint-partner">Explore sponsorship &amp; partnership opportunities</span>
+        </div>
+
+        <div class="form-field">
+          <label for="company">Company / Brand Name *</label>
+          <input type="text" id="company" name="company" placeholder="e.g. ABC Sports Co." required />
+        </div>
+        <div class="form-field">
+          <label for="contact">Contact Person *</label>
+          <input type="text" id="contact" name="contact_person" placeholder="Your full name" required />
+        </div>
+        <div class="form-field">
+          <label for="country">Country / Region *</label>
+          <select id="country" name="country" required>
+            <option value="">Select country</option>
+            <option value="CN">China</option>
+            <option value="PH">Philippines</option>
+            <option value="US">United States</option>
+            <option value="TW">Taiwan</option>
+            <option value="JP">Japan</option>
+            <option value="KR">South Korea</option>
+            <option value="VN">Vietnam</option>
+            <option value="TH">Thailand</option>
+            <option value="MY">Malaysia</option>
+            <option value="SG">Singapore</option>
+            <option value="ID">Indonesia</option>
+            <option value="IN">India</option>
+            <option value="HK">Hong Kong</option>
+            <option value="AU">Australia</option>
+            <option value="DE">Germany</option>
+            <option value="IT">Italy</option>
+            <option value="TR">Turkey</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="email">Business Email *</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone *</label>
+          <input type="tel" id="phone" name="phone" placeholder="+63 912 345 6789" required />
+        </div>
+        <div class="form-field full">
+          <label for="website">Website / Social Media</label>
+          <input type="text" id="website" name="website" placeholder="https:// or Instagram / WeChat ID" />
+        </div>
+
+        <div class="form-field full">
+          <label>Interested Categories</label>
+          <div class="cat-checkboxes">
+            <label class="cat-check"><input type="checkbox" name="categories" value="Basketball"><span>Basketball</span></label>
+            <label class="cat-check"><input type="checkbox" name="categories" value="Pickleball"><span>Pickleball</span></label>
+            <label class="cat-check"><input type="checkbox" name="categories" value="Fitness & Training"><span>Fitness &amp; Training</span></label>
+            <label class="cat-check"><input type="checkbox" name="categories" value="Water Sports"><span>Water Sports</span></label>
+            <label class="cat-check"><input type="checkbox" name="categories" value="Sports Facilities"><span>Sports Facilities</span></label>
+            <label class="cat-check"><input type="checkbox" name="categories" value="Sports Fashion"><span>Sports Fashion</span></label>
+            <label class="cat-check"><input type="checkbox" name="categories" value="Outdoor & Leisure"><span>Outdoor &amp; Leisure</span></label>
+          </div>
+        </div>
+
+        <div class="form-field full">
+          <label for="message">Message / Special Requirements</label>
+          <textarea id="message" name="message" placeholder="Tell us about your products, booth size preference, or any questions..."></textarea>
+        </div>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="submit-btn" id="submitBtn">
+          SUBMIT REGISTRATION
+        </button>
+        <p class="form-note">By submitting, you agree to receive event updates via email. See our <a href="privacy.html" style="color:#7c3aed;font-weight:700;">Privacy Policy</a>.</p>
+      </div>
+    </form>
+  </div>
+
+  <div class="info-cards reveal">
+    <div class="info-card">
+      <span class="ic-emoji">&#128197;</span>
+      <h4>Date</h4>
+      <p>October 8–10, 2026</p>
+    </div>
+    <div class="info-card">
+      <span class="ic-emoji">&#127963;</span>
+      <h4>Venue</h4>
+      <p>SMX Convention Center Manila</p>
+    </div>
+    <div class="info-card">
+      <span class="ic-emoji">&#128231;</span>
+      <h4>Need Help?</h4>
+      <p>info@sportshow.ph</p>
+    </div>
+  </div>
+</section>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-group">
+  <a class="float-btn float-top" href="#home" title="Back to top">
+    <span class="float-tip">Top</span>
+    &#8593;
+  </a>
+</div>
+
+<script>
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+  var reveals = document.querySelectorAll('.reveal');
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(function(el) { obs.observe(el); });
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function() {
+    nav.style.background = window.scrollY > 60 ? 'rgba(26,5,51,0.98)' : 'rgba(26,5,51,0.92)';
+  });
+
+  // Tab key → select value
+  var TAB_TO_VALUE = {
+    exhibitor: 'Exhibitor', buyer: 'Buyer', distributor: 'Distributor',
+    brand: 'Brand Representative', media: 'Media', partner: 'Partner'
+  };
+  // Select value → tab key
+  var VALUE_TO_TAB = {
+    'Exhibitor': 'exhibitor', 'Buyer': 'buyer', 'Distributor': 'distributor',
+    'Brand Representative': 'brand', 'Media': 'media', 'Partner': 'partner'
+  };
+
+  // URL param auto-select (defaults to exhibitor)
+  (function initTypeFromUrl() {
+    var params = new URLSearchParams(window.location.search);
+    var type = params.get('type') || 'exhibitor';
+    switchType(type);
+  })();
+
+  function switchType(type) {
+    // Update tabs
+    document.querySelectorAll('.type-tab').forEach(function(t) { t.classList.remove('active'); });
+    var activeTab = document.getElementById('tab-' + type);
+    if (activeTab) activeTab.classList.add('active');
+
+    // Update select
+    var select = document.getElementById('regType');
+    var val = TAB_TO_VALUE[type];
+    if (val) select.value = val;
+
+    // Update title & submit text
+    var titles = {
+      exhibitor: 'Exhibitor Registration',
+      buyer: 'Buyer Registration',
+      distributor: 'Distributor Registration',
+      brand: 'Brand Representative Registration',
+      media: 'Media Registration',
+      partner: 'Partner Registration'
+    };
+    var subs = {
+      exhibitor: 'Secure your booth at PSS 2026 — October 8–10, Manila',
+      buyer: 'Free admission for qualified buyers — Register now',
+      distributor: 'Connect with manufacturers for distribution partnerships',
+      brand: 'Represent your brand at the leading sports trade show',
+      media: 'Media accreditation for press coverage',
+      partner: 'Explore sponsorship &amp; partnership opportunities'
+    };
+    var btns = {
+      exhibitor: 'BOOK A BOOTH NOW',
+      buyer: 'REGISTER AS BUYER — FREE',
+      distributor: 'SUBMIT REGISTRATION',
+      brand: 'SUBMIT REGISTRATION',
+      media: 'APPLY FOR MEDIA PASS',
+      partner: 'SUBMIT REGISTRATION'
+    };
+    document.getElementById('formTitle').textContent = titles[type] || 'Registration';
+    document.getElementById('formSub').innerHTML = subs[type] || '';
+    document.getElementById('submitBtn').textContent = btns[type] || 'SUBMIT REGISTRATION';
+
+    // Show type hint
+    document.querySelectorAll('.reg-type-hint').forEach(function(h) { h.classList.remove('visible'); });
+    var hint = document.getElementById('typeHint-' + type);
+    if (hint) hint.classList.add('visible');
+  }
+
+  function syncType(val) {
+    var key = VALUE_TO_TAB[val] || val.toLowerCase();
+    switchType(key);
+  }
+
+  // URL param tracking: source > src > utm_source > referrer > direct
+  (function initTracking() {
+    var params = new URLSearchParams(window.location.search);
+    document.getElementById('srcField').value =
+      params.get('source') || params.get('src') || params.get('utm_source') || document.referrer || 'direct';
+    document.getElementById('pageUrlField').value = window.location.href;
+    document.getElementById('utmSrcField').value = params.get('utm_source') || '';
+    document.getElementById('utmMedField').value = params.get('utm_medium') || '';
+    document.getElementById('utmCmpField').value = params.get('utm_campaign') || '';
+  })();
+</script>
+</body>
+</html>

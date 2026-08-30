@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Insights | Philippine Sport Show 2026</title>
+  <meta name="description" content="Market insights, industry trends, and trade analysis for the Philippine and ASEAN sports market. Stay informed with Philippine Sport Show 2026." />
+  <meta property="og:title" content="Market Insights | Philippine Sport Show 2026" />
+  <meta property="og:description" content="Industry trends and market analysis for the Philippine sports market." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple-dark: #1a0533;
+      --purple-mid: #4b0082;
+      --purple-light: #7c3aed;
+      --purple-grad: linear-gradient(135deg, #1a0533 0%, #4b0082 50%, #7c3aed 100%);
+      --neon: #39ff14;
+      --neon-light: #a8ff78;
+      --white: #ffffff;
+      --gray: #f0f0f8;
+      --text-dark: #1a0533;
+      --text-light: #ffffffcc;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', 'Noto Sans SC', sans-serif; background: var(--white); color: var(--text-dark); overflow-x: hidden; }
+
+    /* NAVBAR */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,5,51,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(57,255,20,0.15); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 42px; width: auto; border-radius: 50%; }
+    .nav-logo-text { font-size: 1.1rem; font-weight: 900; color: var(--white); letter-spacing: 1px; }
+    .nav-logo-text span { color: var(--neon); }
+    .nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--neon); }
+    .nav-cta { background: var(--neon) !important; color: var(--purple-dark) !important; padding: 9px 22px; border-radius: 50px; font-weight: 800 !important; letter-spacing: 1px; transition: transform 0.2s, box-shadow 0.2s !important; }
+    .nav-cta:hover { transform: translateY(-2px) !important; box-shadow: 0 4px 20px rgba(57,255,20,0.5) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* PAGE HEADER */
+    .page-header { background: var(--purple-grad); padding: 130px 5% 60px; text-align: center; position: relative; overflow: hidden; }
+    .page-header::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(57,255,20,0.1) 0%, transparent 70%); border-radius: 50%; top: -100px; right: -100px; }
+    .page-header::after { content: ''; position: absolute; width: 350px; height: 350px; background: radial-gradient(circle, rgba(124,58,237,0.2) 0%, transparent 70%); border-radius: 50%; bottom: -80px; left: -60px; }
+    .ph-inner { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+    .ph-badge { display: inline-block; background: rgba(57,255,20,0.15); border: 1px solid var(--neon); color: var(--neon); font-size: 0.78rem; font-weight: 700; letter-spacing: 3px; padding: 6px 20px; border-radius: 50px; margin-bottom: 20px; text-transform: uppercase; }
+    .ph-title { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; color: var(--white); line-height: 1.15; margin-bottom: 14px; }
+    .ph-sub { font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+    /* CONTENT AREA */
+    .content-area { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+
+    /* LIST VIEW */
+    .news-filter { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+    .filter-btn { padding: 8px 20px; border-radius: 50px; border: 1.5px solid rgba(75,0,130,0.2); background: var(--white); color: var(--purple-dark); font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+    .filter-btn:hover, .filter-btn.active { background: var(--purple-dark); color: var(--neon); border-color: var(--purple-dark); }
+
+    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .news-card { background: var(--white); border-radius: 18px; overflow: hidden; box-shadow: 0 4px 20px rgba(26,5,51,0.08); transition: transform 0.25s, box-shadow 0.25s; cursor: pointer; border: 1px solid rgba(0,0,0,0.04); display: flex; flex-direction: column; }
+    .news-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(26,5,51,0.15); }
+    .news-card-img { width: 100%; height: 200px; object-fit: cover; background: var(--gray); }
+    .news-card-body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+    .news-card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .news-card-cat { background: rgba(75,0,130,0.08); color: var(--purple-mid); font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; }
+    .news-card-date { font-size: 0.76rem; color: #999; font-weight: 600; }
+    .news-card-title { font-size: 1.05rem; font-weight: 800; color: var(--purple-dark); line-height: 1.35; margin-bottom: 8px; }
+    .news-card-summary { font-size: 0.86rem; color: #666; line-height: 1.6; flex: 1; margin-bottom: 16px; }
+    .news-card-read { font-size: 0.82rem; font-weight: 700; color: var(--purple-light); text-decoration: none; transition: color 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+    .news-card-read:hover { color: var(--neon); }
+    .news-card-read::after { content: '\2192'; transition: transform 0.2s; }
+    .news-card-read:hover::after { transform: translateX(4px); }
+
+    .news-empty { text-align: center; padding: 60px 20px; color: #999; }
+    .news-empty h3 { font-size: 1.2rem; color: var(--purple-dark); margin-bottom: 8px; }
+
+    /* DETAIL VIEW */
+    .article-detail { max-width: 820px; margin: 0 auto; }
+    .article-back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 700; color: var(--purple-mid); text-decoration: none; margin-bottom: 28px; transition: color 0.2s; }
+    .article-back:hover { color: var(--neon); }
+    .article-back::before { content: '\2190'; font-size: 1.1rem; }
+    .article-hero { border-radius: 20px; overflow: hidden; margin-bottom: 32px; box-shadow: 0 8px 30px rgba(26,5,51,0.12); }
+    .article-hero img { width: 100%; height: auto; display: block; }
+    .article-meta { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; }
+    .article-cat { background: var(--purple-grad); color: var(--white); font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 5px 14px; border-radius: 50px; }
+    .article-date { font-size: 0.85rem; color: #999; font-weight: 600; }
+    .article-title { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; color: var(--purple-dark); line-height: 1.2; margin-bottom: 24px; }
+    .article-body { font-size: 1rem; color: #333; line-height: 1.85; }
+    .article-body h3 { font-size: 1.25rem; font-weight: 800; color: var(--purple-dark); margin: 28px 0 12px; }
+    .article-body p { margin-bottom: 16px; }
+    .article-body ul { margin: 0 0 16px 20px; }
+    .article-body li { margin-bottom: 8px; line-height: 1.7; }
+    .article-body strong { color: var(--purple-dark); }
+    .article-body a { color: var(--purple-light); font-weight: 600; }
+    .article-fb { margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(0,0,0,0.08); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .article-fb-label { font-size: 0.9rem; color: #666; font-weight: 600; }
+    .article-fb-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: #1877f2; color: var(--white); border-radius: 50px; font-size: 0.88rem; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .article-fb-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(24,119,242,0.35); }
+    .article-fb-btn::before { content: 'f'; font-size: 1.1rem; font-weight: 900; width: 22px; height: 22px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .article-share { display: flex; align-items: center; gap: 14px; margin-top: 24px; }
+    .article-share-label { font-size: 0.82rem; color: #999; font-weight: 600; }
+
+    /* BACK TO SITE */
+    .back-site { text-align: center; padding: 40px 5% 60px; background: var(--gray); }
+    .back-site a { display: inline-block; background: var(--purple-dark); color: var(--neon); padding: 14px 40px; border-radius: 50px; font-size: 0.9rem; font-weight: 800; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; letter-spacing: 0.5px; }
+    .back-site a:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(26,5,51,0.3); }
+
+    /* FOOTER */
+    footer { background: #0d0120; padding: 40px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(57,255,20,0.15); }
+    .footer-brand { font-weight: 900; color: var(--white); font-size: 1rem; }
+    .footer-brand span { color: var(--neon); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--neon); }
+    .footer-copy { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1000px) {
+      .news-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(26,5,51,0.97); padding: 20px 5%; border-bottom: 1px solid rgba(57,255,20,0.15); gap: 14px; }
+    }
+    @media (max-width: 600px) {
+      .news-grid { grid-template-columns: 1fr; }
+      .content-area { padding: 40px 5%; }
+      .page-header { padding: 110px 5% 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <img src="logo.jpg" alt="PSS 2026" onerror="this.style.display='none'">
+    <span class="nav-logo-text">PSS <span>2026</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#exhibit">Exhibit</a></li>
+    <li><a href="index.html#visit">Visit</a></li>
+    <li><a href="index.html#categories">Categories</a></li>
+    <li><a href="index.html#matchmaking">Matchmaking</a></li>
+    <li><a href="news.html" style="color:var(--neon);">Insights</a></li>
+    <li><a href="registration.html" class="nav-cta">REGISTRATION</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="ph-inner">
+    <div class="ph-badge">Market Insights</div>
+    <h1 class="ph-title">Latest Market Insights</h1>
+    <p class="ph-sub">Industry trends, market analysis, and trade intelligence for the Philippine and ASEAN sports market.</p>
+  </div>
+</div>
+
+<!-- CONTENT AREA -->
+<div class="content-area" id="contentArea">
+  <!-- Content injected by JavaScript -->
+</div>
+
+<!-- BACK TO SITE -->
+<div class="back-site">
+  <a href="index.html">&larr; Back to Home</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Philippine Sport Show <span>2026</span></div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#exhibit">Exhibit</a>
+    <a href="index.html#visit">Visit</a>
+    <a href="index.html#matchmaking">Matchmaking</a>
+    <a href="news.html">Insights</a>
+    <a href="registration.html">Registration</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 Philippine Sport Show. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+var allNews = [];
+var urlParams = new URLSearchParams(window.location.search);
+var articleId = urlParams.get('id');
+
+function formatDate(d) {
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var parts = d.split('-');
+  return months[parseInt(parts[1])-1] + ' ' + parseInt(parts[2]) + ', ' + parts[0];
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderList() {
+  var container = document.getElementById('contentArea');
+
+  // Filter bar
+  var categories = ['All'];
+  allNews.forEach(function(n) {
+    if (categories.indexOf(n.category) === -1) categories.push(n.category);
+  });
+
+  var html = '<div class="news-filter" id="newsFilter">';
+  categories.forEach(function(cat, i) {
+    html += '<button class="filter-btn' + (i === 0 ? ' active' : '') + '" data-cat="' + escapeHtml(cat) + '">' + escapeHtml(cat) + '</button>';
+  });
+  html += '</div>';
+
+  html += '<div class="news-grid" id="newsGrid">';
+  allNews.forEach(function(n) {
+    html += '<div class="news-card" data-id="' + escapeHtml(n.id) + '" data-cat="' + escapeHtml(n.category) + '">';
+    html += '<img class="news-card-img" src="' + escapeHtml(n.coverImage) + '" alt="' + escapeHtml(n.title) + '" onerror="this.src=\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22><rect width=%22400%22 height=%22200%22 fill=%22%23f0f0f8%22/><text x=%22200%22 y=%22100%22 font-size=%2216%22 text-anchor=%22middle%22 fill=%22%23999%22>No Image</text></svg>\';" />';
+    html += '<div class="news-card-body">';
+    html += '<div class="news-card-meta">';
+    html += '<span class="news-card-cat">' + escapeHtml(n.category) + '</span>';
+    html += '<span class="news-card-date">' + formatDate(n.date) + '</span>';
+    html += '</div>';
+    html += '<h3 class="news-card-title">' + escapeHtml(n.title) + '</h3>';
+    html += '<p class="news-card-summary">' + escapeHtml(n.summary) + '</p>';
+    html += '<a class="news-card-read" href="news.html?id=' + encodeURIComponent(n.id) + '">Read More</a>';
+    html += '</div></div>';
+  });
+  html += '</div>';
+
+  container.innerHTML = html;
+
+  // Card click
+  document.querySelectorAll('.news-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      window.location.href = 'news.html?id=' + encodeURIComponent(this.getAttribute('data-id'));
+    });
+  });
+
+  // Filter
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      var cat = this.getAttribute('data-cat');
+      document.querySelectorAll('.news-card').forEach(function(card) {
+        if (cat === 'All' || card.getAttribute('data-cat') === cat) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+function renderDetail(article) {
+  var container = document.getElementById('contentArea');
+  var html = '<div class="article-detail">';
+  html += '<a class="article-back" href="news.html">All Articles</a>';
+  html += '<div class="article-hero"><img src="' + escapeHtml(article.coverImage) + '" alt="' + escapeHtml(article.title) + '" onerror="this.style.display=\'none\';" /></div>';
+  html += '<div class="article-meta">';
+  html += '<span class="article-cat">' + escapeHtml(article.category) + '</span>';
+  html += '<span class="article-date">' + formatDate(article.date) + '</span>';
+  html += '</div>';
+  html += '<h1 class="article-title">' + escapeHtml(article.title) + '</h1>';
+  html += '<div class="article-body">' + article.content + '</div>';
+  html += '<div class="article-fb">';
+  html += '<span class="article-fb-label">View original post:</span>';
+  html += '<a class="article-fb-btn" href="' + escapeHtml(article.facebookUrl) + '" target="_blank" rel="noopener">Facebook Post</a>';
+  html += '</div>';
+  html += '<div class="article-share">';
+  html += '<span class="article-share-label">Share this article:</span>';
+  html += '<a class="article-fb-btn" href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '" target="_blank" rel="noopener">Share on Facebook</a>';
+  html += '</div>';
+  html += '</div>';
+
+  container.innerHTML = html;
+  document.title = article.title + ' | Philippine Sport Show 2026';
+}
+
+// Fetch news.json
+fetch('news.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    // Sort by date descending
+    allNews = data.sort(function(a, b) { return b.date.localeCompare(a.date); });
+
+    if (articleId) {
+      var found = allNews.filter(function(n) { return n.id === articleId; });
+      if (found.length > 0) {
+        renderDetail(found[0]);
+      } else {
+        document.getElementById('contentArea').innerHTML = '<div class="news-empty"><h3>Article not found</h3><p>The article you are looking for does not exist or has been removed.</p><br><a class="article-back" href="news.html">Back to all articles</a></div>';
+      }
+    } else {
+      renderList();
+    }
+  })
+  .catch(function(err) {
+    document.getElementById('contentArea').innerHTML = '<div class="news-empty"><h3>Unable to load articles</h3><p>Please make sure news.json is available.</p></div>';
+  });
+</script>
+</body>
+</html>
