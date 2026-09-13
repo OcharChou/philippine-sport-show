@@ -49,6 +49,17 @@
   to = "/registration.html"
   status = 200
 
+# Book a Meeting (supplier meeting request form)
+[[redirects]]
+  from = "/book-meeting"
+  to = "/book-meeting.html"
+  status = 200
+
+[[redirects]]
+  from = "/book-meeting-success"
+  to = "/book-meeting-success.html"
+  status = 200
+
 # Exhibitors directory (list page at root; detail pages in /exhibitors/ folder)
 [[redirects]]
   from = "/exhibitors"

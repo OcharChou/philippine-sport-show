@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Meeting | Philippine Sport Show 2026</title>
+  <meta name="description" content="Book a face-to-face meeting with a PSS 2026 exhibitor at Philippine Sport Show 2026, October 8-10, SMX Convention Center Manila." />
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="logo.jpg">
+  <style>
+    :root {
+      --purple-dark: #1a0533;
+      --purple-mid: #4b0082;
+      --purple-light: #7c3aed;
+      --purple-grad: linear-gradient(135deg, #1a0533 0%, #4b0082 50%, #7c3aed 100%);
+      --neon: #39ff14;
+      --neon-light: #a8ff78;
+      --white: #ffffff;
+      --text-light: #ffffffcc;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', 'Noto Sans SC', sans-serif; background: var(--purple-grad); color: var(--white); min-height: 100vh; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,5,51,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(57,255,20,0.15); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 34px; }
+    .nav-logo-text { color: #fff; font-weight: 800; font-size: 1.05rem; }
+    .nav-logo-text span { color: var(--neon); }
+    .nav-links { display: flex; align-items: center; gap: 22px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.5px; }
+    .nav-links a:hover { color: var(--neon); }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 120px 5% 80px; }
+    .tag { display: inline-block; background: rgba(57,255,20,0.12); color: var(--neon); font-size: 0.7rem; font-weight: 800; letter-spacing: 3px; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; text-transform: uppercase; }
+    h1 { font-size: clamp(1.5rem, 4.5vw, 2.3rem); font-weight: 900; line-height: 1.25; margin-bottom: 6px; }
+    h1 .sup-name { color: var(--neon); }
+    .booth-line { font-size: 1rem; font-weight: 700; color: var(--neon-light); margin-bottom: 18px; }
+    .event { font-size: 0.92rem; color: var(--text-light); margin-bottom: 26px; line-height: 1.7; }
+    .event strong { color: #fff; }
+    .note { font-size: 0.9rem; color: var(--text-light); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 14px 18px; margin-bottom: 34px; line-height: 1.7; }
+    .no-exhibitor { display: none; text-align: center; padding: 30px 10px; }
+    .no-exhibitor h2 { font-size: 1.2rem; font-weight: 800; margin-bottom: 12px; }
+    .no-exhibitor p { color: var(--text-light); font-size: 0.92rem; margin-bottom: 24px; line-height: 1.7; }
+    .btn-neon { background: var(--neon); color: var(--purple-dark); border: none; padding: 15px 38px; font-size: 0.95rem; font-weight: 800; border-radius: 50px; text-decoration: none; display: inline-block; transition: all 0.2s; letter-spacing: 0.5px; }
+    .btn-neon:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(57,255,20,0.6); }
+    form { display: none; }
+    .fgroup { margin-bottom: 22px; }
+    label { display: block; font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--neon-light); margin-bottom: 8px; }
+    label .req { color: var(--neon); }
+    input[type=text], input[type=email], textarea, select {
+      width: 100%; background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.2);
+      border-radius: 12px; padding: 14px 16px; font-size: 0.95rem; color: #fff;
+      font-family: inherit; transition: border 0.2s; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--neon); }
+    textarea { min-height: 96px; resize: vertical; }
+    select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2339ff14' stroke-width='2' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
+    select option { color: #1a0533; }
+    .hint { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-top: 6px; }
+    .check { margin: 26px 0 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 18px; }
+    .check label { display: flex; gap: 12px; align-items: flex-start; text-transform: none; letter-spacing: 0; font-size: 0.88rem; font-weight: 600; color: #fff; cursor: pointer; line-height: 1.6; }
+    .check input { width: 20px; height: 20px; accent-color: #39ff14; margin-top: 2px; flex-shrink: 0; }
+    .check .mm-title { font-weight: 800; color: var(--neon); font-size: 0.85rem; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .check .mm-time { font-size: 0.8rem; color: var(--neon-light); font-weight: 700; margin-bottom: 8px; }
+    .ph { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 10px; padding-left: 32px; font-weight: 500; }
+    .submit { width: 100%; background: var(--neon); color: var(--purple-dark); border: none; padding: 17px 40px; font-size: 1rem; font-weight: 900; letter-spacing: 1px; border-radius: 50px; cursor: pointer; transition: all 0.2s; font-family: inherit; margin-top: 30px; }
+    .submit:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(57,255,20,0.6); }
+    .fineprint { font-size: 0.76rem; color: rgba(255,255,255,0.55); text-align: center; margin-top: 16px; line-height: 1.7; }
+    .fineprint a { color: var(--neon-light); }
+    footer { text-align: center; padding: 30px 5% 40px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+    footer a { color: var(--neon-light); text-decoration: none; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .wrap { padding-top: 100px; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="logo.jpg" alt="Philippine Sport Show 2026" onerror="this.style.display='none'">
+    <span class="nav-logo-text">PSS <span>2026</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="exhibitors.html">Exhibitors</a></li>
+    <li><a href="matchmaking/buyer-request.html">Sourcing Request</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+  <span class="tag">Book a Meeting</span>
+  <div id="bm-exhibitor">
+    <h1>Book a Meeting with<br><span class="sup-name" id="bm-name">Supplier</span></h1>
+    <p class="booth-line" id="bm-booth-line">Booth <span id="bm-booth"></span></p>
+  </div>
+  <div class="no-exhibitor" id="no-exhibitor">
+    <h2>No exhibitor selected</h2>
+    <p>Please open this page from an exhibitor detail page on the Exhibitors Directory,<br>so we know which supplier you would like to meet.</p>
+    <a class="btn-neon" href="exhibitors.html">EXPLORE EXHIBITORS</a>
+  </div>
+  <p class="event"><strong>Philippine Sport Show 2026</strong><br>October 8&ndash;10, 2026 &nbsp;|&nbsp; SMX Convention Center Manila</p>
+  <p class="note">Tell us when you would like to meet this supplier. Your meeting request will be shared with the exhibitor before the show.</p>
+
+  <form name="pss-supplier-meeting-request" method="POST" action="book-meeting-success.html" data-netlify="true" netlify-honeypot="bot-field" id="meeting-form">
+    <input type="hidden" name="form-name" value="pss-supplier-meeting-request" />
+    <p style="display:none"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+    <input type="hidden" name="exhibitor_name" id="f-exhibitor" value="">
+    <input type="hidden" name="booth_number" id="f-booth" value="">
+
+    <div class="fgroup">
+      <label>Name <span class="req">*</span></label>
+      <input type="text" name="buyer_name" required>
+    </div>
+    <div class="fgroup">
+      <label>Company Name <span class="req">*</span></label>
+      <input type="text" name="company_name" required>
+    </div>
+    <div class="fgroup">
+      <label>Email <span class="req">*</span></label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="fgroup">
+      <label>Products You Are Interested In <span class="req">*</span></label>
+      <textarea name="products_interested" required placeholder="Please tell us what products you are looking for."></textarea>
+    </div>
+    <div class="fgroup">
+      <label>Preferred Meeting Time <span class="req">*</span></label>
+      <select name="preferred_time" required>
+        <option value="" disabled selected>Select preferred time</option>
+        <option>October 8 &ndash; Morning</option>
+        <option>October 8 &ndash; Afternoon</option>
+        <option>October 9 &ndash; Morning</option>
+        <option>October 9 &ndash; Afternoon</option>
+        <option>October 10 &ndash; Morning</option>
+        <option>October 10 &ndash; Afternoon</option>
+        <option>Flexible / Any Time</option>
+      </select>
+    </div>
+    <div class="check">
+      <label>
+        <input type="checkbox" id="matchmaking_oct9" name="matchmaking_oct9" value="Yes - join the Oct 9 session, 3:00-5:00 PM">
+        <span>
+          <span class="mm-title">Buyer&ndash;Supplier Matchmaking Session</span><br>
+          <span class="mm-time">October 9, 2026 | 3:00 PM&ndash;5:00 PM</span><br>
+          I would also like to join the Buyer&ndash;Supplier Matchmaking Session on October 9, from 3:00 PM to 5:00 PM.
+        </span>
+      </label>
+      <div class="ph">Complimentary gift for participating trade buyers.</div>
+    </div>
+    <button type="submit" class="submit">REQUEST A MEETING</button>
+    <p class="fineprint">By submitting this form, you agree that PSS may share the information above with the selected exhibitor for the purpose of arranging this meeting. Your data will not be used for other purposes or shared with any third parties. See our <a href="privacy.html">Privacy Policy</a>.</p>
+  </form>
+</div>
+
+<footer>
+  <a href="index.html">Philippine Sport Show 2026</a> &nbsp;&middot;&nbsp; A sports sourcing showcase within Philippine Lifestyle Sourcing Expo<br>
+  October 8&ndash;10, 2026 &nbsp;|&nbsp; SMX Convention Center Manila &nbsp;|&nbsp; <a href="mailto:info@sportshow.ph">info@sportshow.ph</a>
+</footer>
+
+<script>
+(function () {
+  var p = new URLSearchParams(location.search);
+  var name = (p.get('exhibitor') || '').trim();
+  var booth = (p.get('booth') || '').trim();
+  var noEx = document.getElementById('no-exhibitor');
+  var ex = document.getElementById('bm-exhibitor');
+  var form = document.getElementById('meeting-form');
+  if (!name) {
+    ex.style.display = 'none';
+    noEx.style.display = 'block';
+    return;
+  }
+  document.getElementById('bm-name').textContent = name;
+  document.getElementById('f-exhibitor').value = name;
+  if (booth) {
+    document.getElementById('bm-booth').textContent = booth;
+    document.getElementById('f-booth').value = booth;
+  } else {
+    document.getElementById('bm-booth-line').style.display = 'none';
+  }
+  form.style.display = 'block';
+})();
+</script>
+</body>
+</html>
