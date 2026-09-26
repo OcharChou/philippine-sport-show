@@ -71,6 +71,17 @@
   to = "/exhibitors.html"
   status = 200
 
+# Sourcing Connect (extended supplier list page at root; future supplier detail pages in /sourcing/ folder)
+[[redirects]]
+  from = "/sourcing"
+  to = "/sourcing.html"
+  status = 200
+
+[[redirects]]
+  from = "/sourcing/"
+  to = "/sourcing.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]

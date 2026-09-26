@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PSS Sourcing Connect &ndash; Selected Sports Suppliers | Philippine Sport Show</title>
+  <meta name="description" content="PSS Sourcing Connect: explore selected sports suppliers beyond the show floor. More suppliers, more choices &mdash; pickleball &amp; racket sports, sports facilities, fitness equipment, sportswear, sports bags, outdoor &amp; water sports." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.sportshow.com.ph/sourcing" />
+  <meta property="og:title" content="PSS Sourcing Connect &ndash; Selected Sports Suppliers | Philippine Sport Show" />
+  <meta property="og:description" content="Explore selected sports suppliers beyond the show floor. More suppliers, more choices." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sportshow.com.ph/sourcing" />
+  <meta property="og:image" content="https://www.sportshow.com.ph/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "PSS Sourcing Connect",
+    "description": "Explore selected sports suppliers beyond the show floor - an extended sourcing service of Philippine Sport Show 2026, a sports section of Philippine Lifestyle Sourcing Expo (PHLSE).",
+    "url": "https://www.sportshow.com.ph/sourcing"
+  }
+  </script>
+  <style>
+    :root {
+      --purple-dark: #1a0533;
+      --purple-mid: #4b0082;
+      --purple-light: #7c3aed;
+      --purple-grad: linear-gradient(135deg, #1a0533 0%, #4b0082 50%, #7c3aed 100%);
+      --neon: #39ff14;
+      --neon-light: #a8ff78;
+      --white: #ffffff;
+      --gray: #f0f0f8;
+      --text-dark: #1a0533;
+      --text-light: #ffffffcc;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', 'Noto Sans SC', sans-serif; background: var(--white); color: var(--text-dark); overflow-x: hidden; }
+
+    /* NAVBAR (same system as index) */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,5,51,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(57,255,20,0.15); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 42px; width: auto; border-radius: 50%; }
+    .nav-logo-text { font-size: 1.1rem; font-weight: 900; color: var(--white); letter-spacing: 1px; }
+    .nav-logo-text span { color: var(--neon); }
+    .nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--neon); }
+    .nav-links a.nav-current { color: var(--neon); }
+    .nav-cta { background: var(--neon) !important; color: var(--purple-dark) !important; padding: 9px 22px; border-radius: 50px; font-weight: 800 !important; letter-spacing: 1px; transition: transform 0.2s, box-shadow 0.2s !important; }
+    .nav-cta:hover { transform: translateY(-2px) !important; box-shadow: 0 4px 20px rgba(57,255,20,0.5) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* DIRECTORY HERO (compact) */
+    #top { background: var(--purple-grad); position: relative; padding: 150px 5% 66px; text-align: center; overflow: hidden; }
+    #top::before { content: ''; position: absolute; width: 480px; height: 480px; background: radial-gradient(circle, rgba(57,255,20,0.1) 0%, transparent 70%); border-radius: 50%; top: -140px; right: -120px; }
+    #top::after { content: ''; position: absolute; width: 380px; height: 380px; background: radial-gradient(circle, rgba(124,58,237,0.28) 0%, transparent 70%); border-radius: 50%; bottom: -120px; left: -90px; }
+    .dir-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+    .dir-badge { display: inline-block; background: rgba(57,255,20,0.15); border: 1px solid var(--neon); color: var(--neon); font-size: 0.74rem; font-weight: 700; letter-spacing: 3px; padding: 6px 20px; border-radius: 50px; margin-bottom: 20px; text-transform: uppercase; }
+    .dir-title { font-size: clamp(1.7rem, 4.2vw, 3rem); font-weight: 900; color: var(--white); line-height: 1.15; margin-bottom: 16px; text-shadow: 0 4px 30px rgba(0,0,0,0.4); }
+    .dir-desc { font-size: 1.02rem; color: var(--text-light); max-width: 700px; margin: 0 auto 18px; line-height: 1.75; }
+    .dir-event { font-size: 0.98rem; color: var(--neon); font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; }
+    .dir-part { font-size: 0.82rem; color: rgba(255,255,255,0.55); font-weight: 600; letter-spacing: 0.5px; }
+    .dir-sub { font-size: 1.18rem; font-weight: 800; color: var(--white); letter-spacing: 0.5px; margin-bottom: 14px; text-shadow: 0 2px 18px rgba(0,0,0,0.35); }
+    .dir-note { font-size: 0.78rem; color: rgba(255,255,255,0.55); font-weight: 600; margin-top: 10px; }
+
+    /* SHARED BUTTONS */
+    .btn-primary { background: var(--neon); color: var(--purple-dark); border: none; padding: 16px 40px; font-size: 1rem; font-weight: 800; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; transition: transform 0.2s, box-shadow 0.2s; letter-spacing: 0.5px; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(57,255,20,0.6); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); padding: 14px 38px; font-size: 1rem; font-weight: 700; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; }
+    .btn-outline:hover { border-color: var(--neon); color: var(--neon); transform: translateY(-3px); }
+
+    /* SEARCH & FILTERS */
+    #directory { background: var(--white); padding: 64px 5% 90px; }
+    .flt-block { max-width: 1200px; margin: 0 auto 34px; }
+    .flt-head { font-size: 0.78rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--purple-mid); margin-bottom: 14px; text-align: center; }
+    .search-wrap { max-width: 760px; margin: 0 auto 18px; position: relative; }
+    .search-wrap .s-icon { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; opacity: 0.45; }
+    #supSearch { width: 100%; padding: 18px 24px 18px 56px; font-size: 1rem; font-family: inherit; font-weight: 600; color: var(--text-dark); background: var(--gray); border: 2px solid rgba(75,0,130,0.18); border-radius: 50px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+    #supSearch:focus { border-color: var(--purple-light); box-shadow: 0 0 0 4px rgba(124,58,237,0.12); background: var(--white); }
+    #supSearch::placeholder { color: #999; font-weight: 500; }
+    .pop-wrap { text-align: center; }
+    .pop-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+    .pop-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .pop-chip { background: var(--white); border: 1px solid rgba(75,0,130,0.25); color: var(--purple-mid); font-size: 0.76rem; font-weight: 700; padding: 7px 16px; border-radius: 50px; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+    .pop-chip:hover { background: rgba(75,0,130,0.08); border-color: var(--purple-light); transform: translateY(-2px); }
+    .cat-btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .flt-btn { background: var(--white); border: 1.5px solid rgba(75,0,130,0.25); color: var(--purple-dark); font-size: 0.8rem; font-weight: 700; padding: 10px 20px; border-radius: 50px; cursor: pointer; font-family: inherit; letter-spacing: 0.3px; transition: all 0.2s; }
+    .flt-btn:hover { border-color: var(--purple-light); transform: translateY(-2px); }
+    .flt-btn.active { background: var(--purple-grad); border-color: transparent; color: var(--white); box-shadow: 0 4px 16px rgba(75,0,130,0.35); }
+    .app-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 900px; margin: 0 auto; }
+    .flt-chip { background: var(--gray); border: 1px solid rgba(75,0,130,0.16); color: var(--purple-mid); font-size: 0.74rem; font-weight: 700; padding: 7px 16px; border-radius: 50px; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+    .flt-chip:hover { border-color: var(--purple-light); }
+    .flt-chip.active { background: rgba(57,255,20,0.12); border-color: var(--neon); color: #1f7a00; }
+    .app-more { display: block; margin: 12px auto 0; background: none; border: none; color: var(--purple-light); font-size: 0.76rem; font-weight: 800; letter-spacing: 1px; cursor: pointer; font-family: inherit; text-transform: uppercase; }
+    .app-more:hover { color: var(--purple-mid); }
+    .app-extra { display: none; }
+    .app-chips.expanded .app-extra { display: inline-block; }
+
+    /* RESULT BAR (Clear Filters) */
+    .result-bar { max-width: 1200px; margin: 0 auto 22px; display: none; align-items: center; justify-content: flex-end; }
+    #clearBtn { background: none; border: 1.5px solid rgba(75,0,130,0.3); color: var(--purple-mid); font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; padding: 7px 16px; border-radius: 50px; cursor: pointer; font-family: inherit; text-transform: uppercase; transition: all 0.2s; }
+    #clearBtn:hover { border-color: var(--purple-mid); background: rgba(75,0,130,0.06); }
+
+    /* SUPPLIER CARDS */
+    .sup-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1200px; margin: 0 auto; }
+    .sup-card { background: var(--white); border: 1px solid rgba(26,5,51,0.07); border-radius: 18px; overflow: hidden; box-shadow: 0 4px 20px rgba(26,5,51,0.08); transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
+    .sup-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(26,5,51,0.15); }
+    .sup-card.hidden { display: none; }
+    .sup-tile { height: 110px; background: var(--purple-grad); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; position: relative; }
+    .sup-tile::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle, rgba(57,255,20,0.14) 0%, transparent 65%); }
+    .sup-init { font-size: 2rem; font-weight: 900; color: var(--white); letter-spacing: 2px; text-shadow: 0 2px 14px rgba(0,0,0,0.4); position: relative; z-index: 2; }
+    .sup-tile-tag { font-size: 0.58rem; font-weight: 800; color: var(--neon); letter-spacing: 2.5px; position: relative; z-index: 2; }
+    .sup-body { padding: 20px 20px 22px; flex: 1; display: flex; flex-direction: column; }
+    .sup-name { font-size: 1.08rem; font-weight: 900; color: var(--purple-dark); line-height: 1.25; margin-bottom: 4px; }
+    .sup-name a { color: inherit; text-decoration: none; }
+    .sup-name a:hover { color: var(--purple-light); }
+    .sup-legal { font-size: 0.7rem; color: #999; font-weight: 600; line-height: 1.4; margin-bottom: 8px; }
+    .sup-country { font-size: 0.74rem; color: #666; font-weight: 700; margin-bottom: 10px; }
+    .sup-cats { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+    .sup-cats span { background: rgba(75,0,130,0.08); color: var(--purple-mid); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 50px; }
+    .sup-kws { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .sup-kws li { font-size: 0.68rem; color: #555; background: var(--gray); padding: 3px 10px; border-radius: 50px; font-weight: 600; }
+    .sup-apps { font-size: 0.72rem; color: #777; line-height: 1.6; margin-bottom: 12px; }
+    .sup-apps strong { color: var(--purple-mid); font-size: 0.66rem; letter-spacing: 0.5px; text-transform: uppercase; }
+    .sup-booth { font-size: 0.76rem; font-weight: 900; color: #1f7a00; letter-spacing: 0.5px; margin-bottom: 14px; }
+    .sup-actions { margin-top: auto; display: flex; flex-direction: column; align-items: flex-start; gap: 9px; }
+    .sup-view { display: inline-block; font-size: 0.72rem; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; background: var(--purple-grad); padding: 9px 18px; border-radius: 50px; transition: all 0.2s; box-shadow: 0 4px 14px rgba(75,0,130,0.25); }
+    .sup-view:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(75,0,130,0.35); color: var(--white); }
+    .sup-meet { font-size: 0.7rem; font-weight: 700; color: var(--purple-light); text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; }
+    .sup-meet:hover { color: var(--purple-dark); text-decoration: underline; }
+    .no-results { display: none; max-width: 640px; margin: 0 auto; text-align: center; background: var(--gray); border: 1px dashed rgba(75,0,130,0.3); border-radius: 16px; padding: 44px 30px; }
+    .no-results.show { display: block; }
+    .no-results h3 { font-size: 1.05rem; font-weight: 800; color: var(--purple-dark); margin-bottom: 10px; }
+    .no-results p { font-size: 0.88rem; color: #777; margin-bottom: 20px; line-height: 1.6; }
+
+    /* BUYER SOURCING CTA */
+    #sourcing-cta { background: var(--purple-grad); text-align: center; padding: 84px 5%; }
+    #sourcing-cta .section-title { font-size: clamp(1.6rem, 3.6vw, 2.4rem); font-weight: 900; color: var(--white); margin-bottom: 16px; }
+    #sourcing-cta .cta-desc { font-size: 1rem; color: rgba(255,255,255,0.72); max-width: 640px; margin: 0 auto 36px; line-height: 1.8; }
+    .cta-btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .cta-mm { font-size: 0.85rem; color: var(--neon-light); font-weight: 700; letter-spacing: 0.5px; margin-top: 28px; }
+
+    /* FOOTER (same system as index) */
+    footer { background: #0d0120; padding: 40px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(57,255,20,0.15); }
+    .footer-brand { font-weight: 900; color: var(--white); font-size: 1rem; }
+    .footer-brand span { color: var(--neon); }
+    .footer-sub { color: rgba(255,255,255,0.4); font-size: 0.75rem; margin-top: 6px; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--neon); }
+    .footer-copy { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+
+    /* FLOATING */
+    .float-group { position: fixed; right: 24px; bottom: 32px; z-index: 999; display: flex; flex-direction: column; gap: 12px; }
+    .float-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; cursor: pointer; text-decoration: none; border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+    .float-btn:hover { transform: scale(1.15); box-shadow: 0 6px 28px rgba(0,0,0,0.4); }
+    .float-reg { background: var(--neon); color: var(--purple-dark); font-size: 0.6rem; font-weight: 900; letter-spacing: 0.5px; line-height: 1.2; text-align: center; width: 56px; height: 56px; }
+    .float-top { background: var(--purple-mid); color: var(--white); font-size: 1.1rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1000px) { .sup-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(26,5,51,0.97); padding: 20px 5%; border-bottom: 1px solid rgba(57,255,20,0.15); gap: 14px; }
+    }
+    @media (max-width: 700px) {
+      .cat-btns { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; -webkit-overflow-scrolling: touch; padding-bottom: 8px; scrollbar-width: thin; }
+      .cat-btns .flt-btn { flex-shrink: 0; white-space: nowrap; }
+      .app-chips { justify-content: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .sup-grid { grid-template-columns: 1fr; }
+      #top { padding: 130px 6% 54px; }
+      #directory { padding: 48px 6% 70px; }
+      .result-bar { justify-content: center; text-align: center; }
+    }
+  </style>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f3a11550e95e9a84cce4402625892e27";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
+<body id="pageTop">
+
+<!-- NAVBAR -->
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <img src="logo.jpg" alt="Philippine Sport Show 2026" onerror="this.style.display='none'">
+    <span class="nav-logo-text">PSS <span>2026</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="exhibitors.html">Exhibitors</a></li>
+    <li><a href="sourcing.html" class="nav-current">Sourcing Connect</a></li>
+    <li><a href="index.html#exhibit">Exhibit</a></li>
+    <li><a href="index.html#visit">Visit</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="news.html">Market Insights</a></li>
+    <li><a href="index.html#matchmaking" style="color:#60a5fa;">Matchmaking</a></li>
+    <li><a href="registration.html" class="nav-cta">REGISTRATION</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- DIRECTORY HERO -->
+<header id="top">
+  <div class="dir-inner">
+    <div class="dir-badge">Sports Sourcing Service</div>
+    <h1 class="dir-title">PSS SOURCING CONNECT</h1>
+    <p class="dir-sub">More Suppliers. More Choices.</p>
+    <p class="dir-desc">Explore selected sports suppliers beyond the show floor.</p>
+    <p class="dir-event">October 8&ndash;10, 2026 &nbsp;|&nbsp; SMX Convention Center Manila</p>
+    <p class="dir-part">Philippine Sport Show (PSS) &mdash; a specialized sports section of Philippine Lifestyle Sourcing Expo (PHLSE)</p>
+    <p class="dir-note">Sourcing Connect is an extended sourcing service of PSS. Listed suppliers are selected partners, not on-site exhibitors.</p>
+  </div>
+</header>
+
+<!-- DIRECTORY: SEARCH + FILTERS + RESULTS -->
+<main id="directory">
+
+  <!-- FIND A SPORTS SUPPLIER -->
+  <div class="flt-block">
+    <div class="flt-head">Find a Sourcing Connect Supplier</div>
+    <div class="search-wrap">
+      <span class="s-icon">&#128269;</span>
+      <input type="text" id="supSearch" placeholder="Search by company, product or keyword..." autocomplete="off" aria-label="Search suppliers by company, product or keyword">
+    </div>
+    <div class="pop-wrap">
+      <div class="pop-label">Popular Sourcing</div>
+      <div class="pop-chips">
+        <button class="pop-chip" data-q="Pickleball Equipment" data-kw="pickleball">Pickleball Equipment</button><button class="pop-chip" data-q="Pickleball Court Flooring" data-kw="pickleball court flooring">Pickleball Court Flooring</button><button class="pop-chip" data-q="Sports Lighting" data-kw="sports lighting">Sports Lighting</button><button class="pop-chip" data-q="Basketball Products" data-kw="basketball">Basketball Products</button><button class="pop-chip" data-q="Sports Shoes" data-kw="sports shoes">Sports Shoes</button><button class="pop-chip" data-q="Sportswear" data-kw="sportswear">Sportswear</button><button class="pop-chip" data-q="Swimwear" data-kw="swimwear">Swimwear</button><button class="pop-chip" data-q="Fitness Products" data-kw="fitness">Fitness Products</button><button class="pop-chip" data-q="Sports Flooring" data-kw="sports flooring">Sports Flooring</button><button class="pop-chip" data-q="Outdoor Products" data-kw="outdoor">Outdoor Products</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTER BY SPORTS CATEGORY -->
+  <div class="flt-block">
+    <div class="flt-head">Filter by Sports Category</div>
+    <div class="cat-btns" id="catBtns">
+          <button class="flt-btn active" data-cat="all" data-norm="all">All Suppliers</button>
+          <button class="flt-btn" data-cat="Sports Facilities" data-norm="sports facilities">Sports Facilities</button>
+          <button class="flt-btn" data-cat="Fitness Equipment" data-norm="fitness equipment">Fitness Equipment</button>
+          <button class="flt-btn" data-cat="Sports Bags" data-norm="sports bags">Sports Bags</button>
+          <button class="flt-btn" data-cat="Pickleball &amp; Racket Sports" data-norm="pickleball &amp; racket sports">Pickleball &amp; Racket Sports</button>
+          <button class="flt-btn" data-cat="Sportswear" data-norm="sportswear">Sportswear</button>
+          <button class="flt-btn" data-cat="Sports Equipment" data-norm="sports equipment">Sports Equipment</button>
+          <button class="flt-btn" data-cat="Outdoor &amp; Water Sports" data-norm="outdoor &amp; water sports">Outdoor &amp; Water Sports</button>
+    </div>
+  </div>
+
+  <!-- RESULT BAR (Clear Filters appears only when a filter is active) -->
+  <div class="result-bar" id="resultBar">
+    <button id="clearBtn" type="button">Clear Filters</button>
+  </div>
+
+  <!-- SUPPLIER CARDS (static HTML for SEO / AI search readability) -->
+  <div class="sup-grid" id="supGrid">
+    <!-- ============================================================
+         SOURCING CONNECT SUPPLIER CARD TEMPLATE
+         (for future suppliers - copy one block per supplier into #supGrid,
+          keep blocks sorted A-Z by company display name)
+
+    <article class="sup-card" data-slug="company-slug" data-cats="Sports Facilities" data-apps="" data-search="brand name | legal company name | country | category | main products, keywords, applications | short capability line">
+      <div class="sup-tile"><span class="sup-init">CS</span><span class="sup-tile-tag">SELECTED SUPPLIER</span></div>
+      <div class="sup-body">
+        <h3 class="sup-name"><a href="sourcing/company-slug.html">COMPANY NAME</a></h3>
+        <p class="sup-country">&#127464;&#127475; China</p>
+        <div class="sup-cats"><span>Sports Facilities</span></div>
+        <ul class="sup-kws"><li>main product 1</li><li>main product 2</li><li>main product 3</li></ul>
+        <div class="sup-actions">
+          <a class="sup-view" href="sourcing/company-slug.html">VIEW SUPPLIER &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    Logo / main product image tile variant (replace the two <span> inside .sup-tile):
+      <div class="sup-tile"><img src="images/sourcing/company-slug.png" alt="COMPANY NAME logo" style="max-height:86px;max-width:82%;object-fit:contain;position:relative;z-index:2;"></div>
+
+    Rules:
+      - NO Booth No. / NO Book a Meeting / NO "EXHIBITOR" tag (these suppliers do not exhibit on site)
+      - .sup-tile-tag is always "SELECTED SUPPLIER"
+      - VIEW SUPPLIER + card name link to /sourcing/company-slug.html
+      - data-cats must use one of the 8 Sourcing Connect categories:
+        Sports Facilities | Fitness Equipment | Sports Bags | Pickleball & Racket Sports | Sportswear | Sports Equipment | Outdoor & Water Sports
+      - future detail pages will add a CONTACT THIS SUPPLIER form; list page stays as is
+         ============================================================ -->
+  </div>
+
+  <!-- NO RESULTS -->
+  <!-- EMPTY STATE: shown while the Sourcing Connect list is being confirmed (no cards yet, no filter active) -->
+  <div class="no-results show" id="emptyState">
+    <h3>Sourcing Connect suppliers are being confirmed.</h3>
+    <p>The full list of selected sports suppliers will be published here soon.<br>In the meantime, tell us what you are sourcing and the PSS team will help you find relevant suppliers.</p>
+  </div>
+
+  <div class="no-results" id="noResults">
+    <h3>No suppliers found for this combination.</h3>
+    <p>Try a different keyword or category &mdash; or submit a sourcing request and the PSS team will help you find relevant suppliers.</p>
+    <button class="btn-primary" style="padding:13px 32px;font-size:0.9rem;" onclick="clearFilters()" type="button">CLEAR FILTERS</button>
+  </div>
+
+</main>
+
+<!-- BUYER SOURCING CTA -->
+<section id="sourcing-cta">
+  <h2 class="section-title">CAN&rsquo;T FIND THE SUPPLIER YOU NEED?</h2>
+  <p class="cta-desc">Tell us what products or sports solutions you are sourcing. The PSS team can help identify relevant suppliers and sourcing partners for your needs.</p>
+  <div class="cta-btn-row">
+    <a class="btn-primary" href="matchmaking/buyer-request.html">SUBMIT SOURCING REQUEST &rarr;</a>
+    <a class="btn-outline" href="registration.html?type=buyer">REGISTER AS TRADE BUYER</a>
+  </div>
+  <p class="cta-mm">Buyer&ndash;Supplier Matchmaking Session: October 9, 2026 &nbsp;|&nbsp; 3:00&ndash;5:00 PM</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">Philippine Sport Show <span>2026</span></div>
+    <div class="footer-sub">A sports sourcing showcase within Philippine Lifestyle Sourcing Expo</div>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="exhibitors.html">Exhibitors</a>
+    <a href="sourcing.html">Sourcing Connect</a>
+    <a href="index.html#exhibit">Exhibit</a>
+    <a href="index.html#visit">Visit</a>
+    <a href="news.html">Market Insights</a>
+    <a href="index.html#matchmaking">Matchmaking</a>
+    <a href="registration.html">Registration</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 Philippine Sport Show. All rights reserved.</div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-group">
+  <a class="float-btn float-reg" href="registration.html" title="Registration">REG</a>
+  <a class="float-btn float-top" href="#pageTop" title="Back to top">&#8593;</a>
+</div>
+
+<script>
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function() {
+    nav.style.background = window.scrollY > 60 ? 'rgba(26,5,51,0.98)' : 'rgba(26,5,51,0.92)';
+  });
+
+  /* ============ SUPPLIER DIRECTORY FILTERING ============
+     Data lives in the static .sup-card elements (data-cats / data-apps / data-search).
+     Cards are pre-sorted A-Z by company name; filtering only shows/hides, never reorders. */
+
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.sup-card'));
+  var searchInput = document.getElementById('supSearch');
+  var catBtns = Array.prototype.slice.call(document.querySelectorAll('#catBtns .flt-btn'));
+  var appChips = Array.prototype.slice.call(document.querySelectorAll('#appChips .flt-chip'));
+  var popChips = Array.prototype.slice.call(document.querySelectorAll('.pop-chip'));
+  var resultBar = document.getElementById('resultBar');
+  var clearBtn = document.getElementById('clearBtn');
+  var noResults = document.getElementById('noResults');
+  var emptyState = document.getElementById('emptyState');
+  var state = { q: '', cat: 'all', app: '' };
+
+  function norm(s) { return s.toLowerCase().replace(/-/g, ' ').replace(/\s+/g, ' ').trim(); }
+
+  /* Popular Sourcing: friendly label -> stable search keyword (from data-kw) */
+  function popKeyword(label) {
+    var kw = '';
+    popChips.forEach(function(p) {
+      if (p.dataset.q === label) kw = p.dataset.kw || p.dataset.q;
+    });
+    return kw;
+  }
+
+  function catMatch(paramNorm) {
+    var found = '';
+    catBtns.forEach(function(b) {
+      if (!b.dataset.cat || b.dataset.cat === 'all') return;
+      var n = norm(b.dataset.cat);
+      if (n === paramNorm || n.indexOf(paramNorm) === 0) found = b.dataset.cat;
+    });
+    return found;
+  }
+
+  function cardMatches(c) {
+    if (state.cat !== 'all' && c.dataset.cats.split('|').indexOf(state.cat) === -1) return false;
+    if (state.app && c.dataset.apps.split('|').indexOf(state.app) === -1) return false;
+    if (state.q) {
+      var words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+      var hay = ' ' + c.dataset.search.toLowerCase() + ' ';
+      for (var i = 0; i < words.length; i++) {
+        if (hay.indexOf(words[i]) === -1) return false;
+      }
+    }
+    return true;
+  }
+
+  function apply() {
+    var shown = 0;
+    cards.forEach(function(c) {
+      var ok = cardMatches(c);
+      c.classList.toggle('hidden', !ok);
+      if (ok) shown++;
+    });
+    var filtered = !!(state.q || state.cat !== 'all' || state.app);
+    /* empty state: supplier list not yet published and no filter active */
+    if (emptyState) emptyState.style.display = (cards.length === 0 && !filtered) ? 'block' : 'none';
+    noResults.classList.toggle('show', shown === 0 && (cards.length > 0 || filtered));
+    resultBar.style.display = filtered ? 'flex' : 'none';
+    /* sync URL params */
+    if (window.history && window.history.replaceState) {
+      var p = new URLSearchParams();
+      if (state.q) p.set('search', state.q);
+      if (state.cat !== 'all') p.set('category', state.cat);
+      if (state.app) p.set('application', state.app);
+      var qs = p.toString();
+      history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
+    }
+  }
+
+  searchInput.addEventListener('input', function() { state.q = this.value.trim(); apply(); });
+
+  catBtns.forEach(function(b) {
+    b.addEventListener('click', function() {
+      state.cat = this.dataset.cat;
+      catBtns.forEach(function(x) { x.classList.toggle('active', x === b); });
+      apply();
+    });
+  });
+
+  appChips.forEach(function(ch) {
+    ch.addEventListener('click', function() {
+      var was = this.classList.contains('active');
+      appChips.forEach(function(x) { x.classList.remove('active'); });
+      if (!was) { this.classList.add('active'); state.app = this.dataset.app; }
+      else { state.app = ''; }
+      apply();
+    });
+  });
+
+  /* popular sourcing shortcuts: search box shows the friendly label,
+     filtering uses the stable mapped keyword from data-kw */
+  popChips.forEach(function(p) {
+    p.addEventListener('click', function() {
+      searchInput.value = this.dataset.q;
+      state.q = this.dataset.kw || this.dataset.q;
+      apply();
+      document.getElementById('directory').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  function clearFilters() {
+    state = { q: '', cat: 'all', app: '' };
+    searchInput.value = '';
+    catBtns.forEach(function(x) { x.classList.toggle('active', x.dataset.cat === 'all'); });
+    appChips.forEach(function(x) { x.classList.remove('active'); });
+    apply();
+  }
+  clearBtn.addEventListener('click', clearFilters);
+
+  /* URL params: ?category= & ?search= & ?application= (links from homepage) */
+  (function initFromUrl() {
+    var p = new URLSearchParams(location.search);
+    var catParam = p.get('category');
+    var appParam = p.get('application');
+    var qParam = p.get('search') || p.get('q');
+    if (qParam) {
+      searchInput.value = qParam;
+      /* if the param is a Popular Sourcing label, use its stable keyword */
+      state.q = popKeyword(qParam) || qParam;
+    }
+    if (catParam) {
+      var m = catMatch(norm(catParam));
+      if (m) {
+        state.cat = m;
+        catBtns.forEach(function(x) { x.classList.toggle('active', x.dataset.cat === m); });
+      }
+    }
+    if (appParam) {
+      var an = norm(appParam);
+      appChips.forEach(function(ch) {
+        if (norm(ch.dataset.app) === an) { ch.classList.add('active'); state.app = ch.dataset.app; }
+      });
+    }
+    apply();
+  })();
+</script>
+</body>
+</html>
