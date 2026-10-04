@@ -139,7 +139,7 @@
     <li><a href="index.html#visit">Visit</a></li>
     <li><a href="index.html#categories">Categories</a></li>
     <li><a href="index.html#venue">Venue</a></li>
-    <li><a href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank" class="nav-cta">REGISTRATION</a></li>
+    <li><a href="registration.html" class="nav-cta">REGISTRATION</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -152,7 +152,6 @@
     <div class="hero-badge">Manila &nbsp;·&nbsp; October 8–10, 2026</div>
     <h1>Register Now</h1>
     <p class="hero-sub">Join Philippine Sport Show 2026 &mdash; the leading B2B sports trade expo in Manila.<br>Book your booth or register as a qualified buyer for free entry.</p>
-    <p class="hero-sub" style="margin-bottom:6px;"><a href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank" style="color:#39ff14;font-weight:800;text-decoration:underline;">&#10148; REGISTER AS A BUYER</a> &mdash; Buyer &amp; visitor registration for Philippine Sport Show is processed through the official PHLSE 2026 registration system.</p>
     <div class="type-tabs">
       <button class="type-tab active" id="tab-exhibitor" onclick="switchType('exhibitor')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>

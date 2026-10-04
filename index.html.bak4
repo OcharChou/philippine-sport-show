@@ -258,7 +258,7 @@
     <li><a href="#visit">Visit</a></li>
     <li><a href="news.html">Market Insights</a></li>
     <li><a href="sourcing.html" style="color:#60a5fa;">Sourcing Connect</a></li>
-    <li><a href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank" class="nav-cta">REGISTRATION</a></li>
+    <li><a href="registration.html" class="nav-cta">REGISTRATION</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -281,7 +281,7 @@
     <p class="hero-date">October 8&ndash;10, 2026 &nbsp;|&nbsp; SMX Convention Center, Manila</p>
     <div class="hero-btns">
       <a class="btn-primary" href="exhibitors.html">EXPLORE EXHIBITORS</a>
-      <a class="btn-outline" href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank">REGISTER AS A BUYER</a>
+      <a class="btn-outline" href="registration.html?type=buyer">REGISTER AS TRADE BUYER</a>
     </div>
   </div>
   <div class="stats-bar">
@@ -421,7 +421,7 @@
       </div>
     </div>
     <div id="exhibit" class="visit-cta-row reveal">
-      <a class="btn-primary" href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank">REGISTER AS A BUYER</a>
+      <a class="btn-primary" href="registration.html?type=buyer">REGISTER AS TRADE BUYER</a>
       <a class="btn-dark-outline" href="registration.html?type=exhibitor">EXHIBIT AT PSS</a>
     </div>
     <div id="matchmaking" class="mm-row reveal">
@@ -470,7 +470,7 @@
     <p class="section-desc" style="margin:0 auto 24px;">Meet sports brands, manufacturers and suppliers in Manila this October.</p>
     <p class="event-info">OCT 8&ndash;10, 2026 &nbsp;&bull;&nbsp; SMX CONVENTION CENTER MANILA &nbsp;&bull;&nbsp; 09:00&ndash;18:00</p>
     <div class="contact-cta-row">
-      <a class="btn-primary" href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank">REGISTER AS A BUYER</a>
+      <a class="btn-primary" href="registration.html?type=buyer">REGISTER AS TRADE BUYER</a>
       <a class="btn-outline" href="exhibitors.html">EXPLORE EXHIBITORS</a>
     </div>
     <p class="exhibit-note">Interested in exhibiting? &nbsp;<a href="registration.html?type=exhibitor">EXHIBIT AT PSS &rarr;</a></p>
@@ -495,7 +495,7 @@
     <a href="#visit">Visit</a>
     <a href="news.html">Market Insights</a>
     <a href="sourcing.html">Sourcing Connect</a>
-    <a href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank">Registration</a>
+    <a href="registration.html">Registration</a>
     <a href="#contact">Contact</a>
     <a href="privacy.html">Privacy Policy</a>
   </div>
@@ -504,7 +504,7 @@
 
 <!-- FLOATING BUTTONS -->
 <div class="float-group">
-  <a class="float-btn float-reg" href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank" title="Registration">
+  <a class="float-btn float-reg" href="registration.html" title="Registration">
     <span class="float-tip">Register Now</span>
     REG
   </a>

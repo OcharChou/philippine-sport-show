@@ -99,7 +99,7 @@
     <li><a href="index.html#visit">Visit</a></li>
     <li><a href="news.html">Market Insights</a></li>
     <li><a href="index.html#matchmaking">Matchmaking</a></li>
-    <li><a href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank" class="nav-cta">REGISTRATION</a></li>
+    <li><a href="registration.html" class="nav-cta">REGISTRATION</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -204,7 +204,7 @@
     <a href="index.html">Home</a>
     <a href="exhibitors.html">Exhibitors</a>
     <a href="news.html">Market Insights</a>
-    <a href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank">Registration</a>
+    <a href="registration.html">Registration</a>
     <a href="privacy.html">Privacy Policy</a>
   </div>
   <div class="footer-copy">&copy; 2026 Philippine Sport Show. All rights reserved.</div>

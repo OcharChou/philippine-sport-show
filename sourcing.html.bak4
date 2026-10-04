@@ -208,7 +208,7 @@
     <li><a href="index.html#about">About</a></li>
     <li><a href="news.html">Market Insights</a></li>
     <li><a href="index.html#matchmaking" style="color:#60a5fa;">Matchmaking</a></li>
-    <li><a href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank" class="nav-cta">REGISTRATION</a></li>
+    <li><a href="registration.html" class="nav-cta">REGISTRATION</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -776,7 +776,7 @@
   <p class="cta-desc">Tell us what products or sports solutions you are sourcing. The PSS team can help identify relevant suppliers and sourcing partners for your needs.</p>
   <div class="cta-btn-row">
     <a class="btn-primary" href="matchmaking/buyer-request.html">SUBMIT SOURCING REQUEST &rarr;</a>
-    <a class="btn-outline" href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank">REGISTER AS A BUYER</a>
+    <a class="btn-outline" href="registration.html?type=buyer">REGISTER AS TRADE BUYER</a>
   </div>
   <p class="cta-mm">Buyer&ndash;Supplier Matchmaking Session: October 9, 2026 &nbsp;|&nbsp; 3:00&ndash;5:00 PM</p>
 </section>
@@ -795,7 +795,7 @@
     <a href="index.html#visit">Visit</a>
     <a href="news.html">Market Insights</a>
     <a href="index.html#matchmaking">Matchmaking</a>
-    <a href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank">Registration</a>
+    <a href="registration.html">Registration</a>
     <a href="index.html#contact">Contact</a>
     <a href="privacy.html">Privacy Policy</a>
   </div>
@@ -804,7 +804,7 @@
 
 <!-- FLOATING BUTTONS -->
 <div class="float-group">
-  <a class="float-btn float-reg" href="https://phlifestylesourcingexpo.vx-events.com/" target="_blank" title="Registration">REG</a>
+  <a class="float-btn float-reg" href="registration.html" title="Registration">REG</a>
   <a class="float-btn float-top" href="#pageTop" title="Back to top">&#8593;</a>
 </div>
 
